@@ -1,6 +1,6 @@
-import rlcard
-from rlcard import models
-from rlcard.agents.human_agents.uno_human_agent import HumanAgent
+import UNOFastAPI.rlcard as rlcard
+from UNOFastAPI.rlcard import models
+from UNOFastAPI.rlcard.agents.human_agents.uno_human_agent import HumanAgent
 
 trajectories = []
 
@@ -337,10 +337,10 @@ def human_draw_card():
 
 
 
-from rlcard import models
+from UNOFastAPI.rlcard import models
 
 
-# Load the rule-based agent ('uno-rule-v1') from rlcard models
+# Load the rule-based agent ('uno-rule-v1') from UNOFastAPI.rlcard models
 dqn_agent = models.load('uno-rule-v1')
 
 # Set up the agents: human player and rule-based AI agent

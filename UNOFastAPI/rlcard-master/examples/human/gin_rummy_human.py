@@ -24,17 +24,17 @@
 # from __future__ import annotations
 from typing import TYPE_CHECKING
 if TYPE_CHECKING:
-    from rlcard.envs.gin_rummy import GinRummyEnv
+    from UNOFastAPI.rlcard.envs.gin_rummy import GinRummyEnv
 
-import rlcard
+import UNOFastAPI.rlcard as rlcard
 
-from rlcard.agents import RandomAgent
-from rlcard.models.gin_rummy_rule_models import GinRummyNoviceRuleAgent
-from rlcard.agents.human_agents.gin_rummy_human_agent.gin_rummy_human_agent import HumanAgent
+from UNOFastAPI.rlcard.agents import RandomAgent
+from UNOFastAPI.rlcard.models.gin_rummy_rule_models import GinRummyNoviceRuleAgent
+from UNOFastAPI.rlcard.agents.human_agents.gin_rummy_human_agent.gin_rummy_human_agent import HumanAgent
 
-from rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_app import GameApp
+from UNOFastAPI.rlcard.agents.human_agents.gin_rummy_human_agent.gui_gin_rummy.game_app import GameApp
 
-from rlcard.games.gin_rummy.utils import scorers
+from UNOFastAPI.rlcard.games.gin_rummy.utils import scorers
 
 
 def make_gin_rummy_env() -> 'GinRummyEnv':

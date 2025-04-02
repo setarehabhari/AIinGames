@@ -88,7 +88,7 @@ public class Server
     {
         try
         {
-            HttpResponseMessage response = await httpClient.GetAsync($"http://{serverAddress}/get_suggestion");
+            HttpResponseMessage response = await httpClient.GetAsync($"http://{serverAddress}/suggestion");
             response.EnsureSuccessStatusCode();
             return await response.Content.ReadAsStringAsync();
         }
@@ -103,7 +103,7 @@ public class Server
     {
         try
         {
-            HttpResponseMessage response = await httpClient.GetAsync($"http://{serverAddress}/get_game_state");
+            HttpResponseMessage response = await httpClient.GetAsync($"http://{serverAddress}/get_human_game_state");
             response.EnsureSuccessStatusCode();
             return await response.Content.ReadAsStringAsync();
         }

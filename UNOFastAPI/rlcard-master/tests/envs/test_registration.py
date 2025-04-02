@@ -1,7 +1,7 @@
 import unittest
 
-import rlcard
-from rlcard.envs.registration import register, make
+import UNOFastAPI.rlcard as rlcard
+from UNOFastAPI.rlcard.envs.registration import register, make
 from .determism_util import is_deterministic
 
 

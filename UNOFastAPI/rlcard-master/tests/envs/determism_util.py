@@ -1,5 +1,5 @@
-import rlcard
-from rlcard.agents.random_agent import RandomAgent
+import UNOFastAPI.rlcard as rlcard
+from UNOFastAPI.rlcard.agents.random_agent import RandomAgent
 import random
 import numpy as np
 

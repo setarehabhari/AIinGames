@@ -14,7 +14,7 @@ from pettingzoo.classic import (
     gin_rummy_v4,
 )
 
-from rlcard.agents.dmc_agent import DMCTrainer
+from UNOFastAPI.rlcard.agents.dmc_agent import DMCTrainer
 
 
 env_name_to_env_func = {

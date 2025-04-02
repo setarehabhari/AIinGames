@@ -233,7 +233,7 @@ We use 3 planes to represnt players' hand. Specifically, planes 0-2 represent 0 
 
 ### Action Encoding of Uno
 
-There are 61 actions in Uno. They are encoded as below. The detailed  mapping of action and its ID is in [rlcard/games/uno/jsondata/action_space.json](../rlcard/games/uno/jsondata/action_space.json):
+There are 61 actions in Uno. They are encoded as below. The detailed  mapping of action and its ID is in [rlcard/games/uno/jsondata/action_space.json](../../rlcard/games/uno/jsondata/action_space.json):
 
 | Action ID |                   Action                   |
 | --------- | :----------------------------------------: |

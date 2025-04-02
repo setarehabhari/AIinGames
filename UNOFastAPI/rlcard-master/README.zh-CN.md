@@ -97,8 +97,8 @@ Conda安装只包含卡牌环境，您需要按照您的需求手动安装PyTorc
 以下是一个**小例子**
 
 ```python
-import rlcard
-from rlcard.agents import RandomAgent
+import UNOFastAPI.rlcard as rlcard
+from UNOFastAPI.rlcard.agents import RandomAgent
 
 env = rlcard.make('blackjack')
 env.set_agents([RandomAgent(num_actions=env.num_actions)])
@@ -189,7 +189,7 @@ Agent 1: +++
 | 虚拟遗憾最小化算法（Counterfactual Regret Minimization，CFR） | [examples/run\_cfr.py](examples/run_cfr.py) | [[论文]](http://papers.nips.cc/paper/3306-regret-minimization-in-games-with-incomplete-information.pdf) |
 
 ## 预训练和基于规则的模型
-我们提供了一个[模型集合](rlcard/models)作为基准线。
+我们提供了一个[模型集合](../rlcard/models)作为基准线。
 
 | 模型                                     | 解释                                              |
 | :--------------------------------------: | :-----------------------------------------------: |
@@ -240,10 +240,10 @@ Agent 1: +++
 *   [/examples](examples): 使用RLCard的一些样例。
 *   [/docs](docs): RLCard的文档。
 *   [/tests](tests): RLCard的测试脚本。
-*   [/rlcard/agents](rlcard/agents): 强化学习算法以及人类智能体。
-*   [/rlcard/envs](rlcard/envs): 环境包装（状态表述，动作编码等）。
-*   [/rlcard/games](rlcard/games): 不同的游戏引擎。
-*   [/rlcard/models](rlcard/models): 包括预训练模型和规则模型在内的模型集合。
+*   [/rlcard/agents](../rlcard/agents): 强化学习算法以及人类智能体。
+*   [/rlcard/envs](../rlcard/envs): 环境包装（状态表述，动作编码等）。
+*   [/rlcard/games](../rlcard/games): 不同的游戏引擎。
+*   [/rlcard/models](../rlcard/models): 包括预训练模型和规则模型在内的模型集合。
 
 ## 更多文档
 请参考[这里](docs/README.md)查阅更多文档[Documents](docs/README.md)。API文档在我们的[网站](http://www.rlcard.org)中。

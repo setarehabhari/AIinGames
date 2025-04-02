@@ -5,8 +5,8 @@ import argparse
 
 import torch
 
-import rlcard
-from rlcard.agents.dmc_agent import DMCTrainer
+import UNOFastAPI.rlcard as rlcard
+from UNOFastAPI.rlcard.agents.dmc_agent import DMCTrainer
 
 def train(args):
 

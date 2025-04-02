@@ -51,7 +51,7 @@ public class UnoCard : MonoBehaviour
         moveComponent = GetComponent<MoveObject>();
         moveComponent.targetTransform = transform;
         
-        Debug.Log("YAY: " + initialScale);
+        //Debug.Log("YAY: " + initialScale);
         
         //tween.Pause();
         //tweenSequence = DOTween.Sequence();
@@ -103,6 +103,13 @@ public class UnoCard : MonoBehaviour
 
     }
 
+    public bool IsWildCard()
+    {
+        if (this.Type == SpecialCard.Wild || this.Type == SpecialCard.Wild){
+            return true;
+        }
+        return false;
+    }
     public void AddStuffFromActualCard(UnoCard actualCard)
     {
         this.id = actualCard.id;

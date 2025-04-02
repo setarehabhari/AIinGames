@@ -1,13 +1,13 @@
 import unittest
 
-from rlcard.models.model import Model
-from rlcard.models.pretrained_models import LeducHoldemCFRModel
-from rlcard.models.leducholdem_rule_models import LeducHoldemRuleModelV1, LeducHoldemRuleModelV2
+from UNOFastAPI.rlcard.models.model import Model
+from UNOFastAPI.rlcard.models.pretrained_models import LeducHoldemCFRModel
+from UNOFastAPI.rlcard.models.leducholdem_rule_models import LeducHoldemRuleModelV1, LeducHoldemRuleModelV2
 
-from rlcard.models.limitholdem_rule_models import LimitholdemRuleModelV1
-from rlcard.models.doudizhu_rule_models import DouDizhuRuleModelV1
+from UNOFastAPI.rlcard.models.limitholdem_rule_models import LimitholdemRuleModelV1
+from UNOFastAPI.rlcard.models.doudizhu_rule_models import DouDizhuRuleModelV1
 
-from rlcard.models.gin_rummy_rule_models import GinRummyNoviceRuleModel
+from UNOFastAPI.rlcard.models.gin_rummy_rule_models import GinRummyNoviceRuleModel
 
 
 class TestModel(unittest.TestCase):

@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnoCard;
 
 public class UnoPlayer : MonoBehaviour
 {
@@ -24,6 +26,7 @@ public class UnoPlayer : MonoBehaviour
     public Image CardPlaceImage;
     public Image PlayerImg;
     public UnoCard.CardType PlayerColor;
+    public UnoCard ColorDrawCard;
     public Animator animator;
 
     private UnoCard chosenCard = null;
@@ -171,6 +174,8 @@ public class UnoPlayer : MonoBehaviour
         {
             if (AI == null)
             {
+
+                ColorDrawCard = cardScript;
                 SelectColorPanel.SetActive(true);//then ColorSelected function will be called
             }
             else
@@ -195,8 +200,16 @@ public class UnoPlayer : MonoBehaviour
     }
     public void ColorSelected(int color)//called from button clicked
     {
-        GameManager.DiscardPile.SetWildLastCardUIColor((UnoCard.CardType)color);
 
+        GameManager.DiscardPile.SetWildLastCardUIColor((UnoCard.CardType)color);
+        
+        
+        StringBuilder sb = new StringBuilder(ColorDrawCard.stringId);
+        sb[0] = GetCardFromInt(color);
+        string CardIdAFterColorpick = sb.ToString();
+
+
+        StartCoroutine(PlayCardAsyncAsCoroutine(CardIdAFterColorpick));
         SelectColorPanel.SetActive(false);
         GameManager.ContinueGame();
         if (GameManager.OnlineGame)
@@ -204,6 +217,23 @@ public class UnoPlayer : MonoBehaviour
             GameManager.EventSender.Online_OnWildColorSelected(color);
         }
     }
+    public char GetCardFromInt(int colorId)
+    {
+        if (colorId == ((int)CardType.Red))
+        {
+            return 'r';
+        }
+        if (colorId == ((int)CardType.Blue))
+        {
+            return 'b';
+        }
+        if (colorId == ((int)CardType.Green))
+        {
+            return 'g';
+        }
+        return 'y';
+    }
+
     IEnumerator AIPlay()
     {
         AI.Owner = handOwner;
@@ -232,7 +262,7 @@ public class UnoPlayer : MonoBehaviour
                 card.StopAnimation();
                 RemoveFromHand(card);//TODO: move in discard in pile code
                 Immune(false);
-                if (card.stringId is not null)
+                if (!card.IsWildCard() && card.stringId is not null)
                 {
                     StartCoroutine(PlayCardAsyncAsCoroutine(card.stringId));
                 }

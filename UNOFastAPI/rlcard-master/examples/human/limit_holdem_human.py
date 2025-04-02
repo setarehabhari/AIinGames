@@ -1,10 +1,10 @@
 ''' A toy example of playing against a random agent on Limit Hold'em
 '''
 
-import rlcard
-from rlcard.agents import LimitholdemHumanAgent as HumanAgent
-from rlcard.agents import RandomAgent
-from rlcard.utils.utils import print_card
+import UNOFastAPI.rlcard as rlcard
+from UNOFastAPI.rlcard.agents import LimitholdemHumanAgent as HumanAgent
+from UNOFastAPI.rlcard.agents import RandomAgent
+from UNOFastAPI.rlcard.utils.utils import print_card
 
 # Make environment
 env = rlcard.make('limit-holdem')

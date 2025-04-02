@@ -1,8 +1,8 @@
 import unittest
 import numpy as np
 
-import rlcard
-from rlcard.agents.random_agent import RandomAgent
+import UNOFastAPI.rlcard as rlcard
+from UNOFastAPI.rlcard.agents.random_agent import RandomAgent
 from .determism_util import is_deterministic
 
 class TestBlackjackEnv(unittest.TestCase):

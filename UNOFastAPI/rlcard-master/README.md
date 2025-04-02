@@ -137,8 +137,8 @@ Conda installation only provides the card environments, you need to manually ins
 A **short example** is as below.
 
 ```python
-import rlcard
-from rlcard.agents import RandomAgent
+import UNOFastAPI.rlcard as rlcard
+from UNOFastAPI.rlcard.agents import RandomAgent
 
 env = rlcard.make('blackjack')
 env.set_agents([RandomAgent(num_actions=env.num_actions)])
@@ -227,7 +227,7 @@ We provide a complexity estimation for the games on several aspects. **InfoSet N
 | Counterfactual Regret Minimization (CFR) | [examples/run\_cfr.py](examples/run_cfr.py) | [[paper]](http://papers.nips.cc/paper/3306-regret-minimization-in-games-with-incomplete-information.pdf) |
 
 ## Pre-trained and Rule-based Models
-We provide a [model zoo](rlcard/models) to serve as the baselines.
+We provide a [model zoo](../rlcard/models) to serve as the baselines.
 
 | Model                                    | Explanation                                              |
 | :--------------------------------------: | :------------------------------------------------------: |
@@ -278,10 +278,10 @@ The purposes of the main modules are listed as below:
 *   [/examples](examples): Examples of using RLCard.
 *   [/docs](docs): Documentation of RLCard.
 *   [/tests](tests): Testing scripts for RLCard.
-*   [/rlcard/agents](rlcard/agents): Reinforcement learning algorithms and human agents.
-*   [/rlcard/envs](rlcard/envs): Environment wrappers (state representation, action encoding etc.)
-*   [/rlcard/games](rlcard/games): Various game engines.
-*   [/rlcard/models](rlcard/models): Model zoo including pre-trained models and rule models.
+*   [/rlcard/agents](../rlcard/agents): Reinforcement learning algorithms and human agents.
+*   [/rlcard/envs](../rlcard/envs): Environment wrappers (state representation, action encoding etc.)
+*   [/rlcard/games](../rlcard/games): Various game engines.
+*   [/rlcard/models](../rlcard/models): Model zoo including pre-trained models and rule models.
 
 ## More Documents
 For more documentation, please refer to the [Documents](docs/README.md) for general introductions. API documents are available at our [website](http://www.rlcard.org).

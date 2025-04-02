@@ -1,8 +1,8 @@
 import unittest
 import numpy as np
-from rlcard.utils.utils import init_54_deck, init_standard_deck, rank2int, print_card, elegent_form, reorganize, tournament
-import rlcard
-from rlcard.agents.random_agent import RandomAgent
+from UNOFastAPI.rlcard.utils.utils import init_54_deck, init_standard_deck, rank2int, print_card, elegent_form, reorganize, tournament
+import UNOFastAPI.rlcard as rlcard
+from UNOFastAPI.rlcard.agents.random_agent import RandomAgent
 
 class TestUtils(unittest.TestCase):
 

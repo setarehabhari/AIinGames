@@ -25,8 +25,8 @@ We strongly encourage you to write the testing code in parallel with your develo
 ## Making Configurable Environments
 We take Blackjack as an Example to show how we can define game specific configurations in RLCard. The key points are highlighted as follows:
 
-*   We add a `DEFAULT_GAME_CONFIG` in [Blackjack Env](rlcard/envs/blackjack.py) to define the default values of the game configurations. Each field should start with `game_`
+*   We add a `DEFAULT_GAME_CONFIG` in [Blackjack Env](../rlcard/envs/blackjack.py) to define the default values of the game configurations. Each field should start with `game_`
 *   Modify the game and environment according to the configurations. For example, we need to support multiple players in Blackjack.
-*	Modify [Env](rlcard/envs/env.py) to add your game to the `supported_envs`
+*	Modify [Env](../rlcard/envs/env.py) to add your game to the `supported_envs`
 *   When making the environment, we pass the newly defined fields in `config`. For example, we pass `config={'game_player_num': 2}` for Blackjack.
 
