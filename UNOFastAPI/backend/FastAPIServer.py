@@ -37,7 +37,7 @@ async def play_card(card_move: str):
 
 
 
-@app.post("/suggestion")
+@app.get("/suggestion")
 async def suggest():
     """
     FastAPI endpoint for processing the AI's move.
