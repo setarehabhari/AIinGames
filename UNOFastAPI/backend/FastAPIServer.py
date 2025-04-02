@@ -5,9 +5,16 @@ from AIBackend import *
 # Initialize FastAPI app
 app = FastAPI()
 
+
+@app.get("/start_game")
+def start_game():
+    # return
+    initialize_game()
 # Load AI agent and set up agents in the environment
-ai_agent = load_ai_agent()
-set_agents(ai_agent)
+    ai_agent = load_ai_agent()
+    set_agents(ai_agent)
+
+
 
 
 @app.get("/get_human_game_state")

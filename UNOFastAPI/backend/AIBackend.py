@@ -23,7 +23,7 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 # from backend.NewAIModule import suggest_move
 
-global player_id, stt, trajectories, human_agent
+global player_id, stt, trajectories, human_agent, ai_played_draw
 
 def load_model(model_path, env=None, position=None, device=None):
     if os.path.isfile(model_path):  # Torch model
@@ -50,12 +50,15 @@ def load_model(model_path, env=None, position=None, device=None):
 def initialize_game():
     # Initialize the environment and agents
     # env.reset()
-    global stt, player_id, trajectories, human_agent
+    global stt, player_id, trajectories, human_agent, ai_played_draw
     stt, player_id = env.reset()
 
     # Create the human agent
     human_agent = HumanAgent(env.num_actions)
     trajectories = [[] for _ in range(env.num_players)]
+    ai_played_draw = False
+
+
 
 
 
@@ -81,6 +84,7 @@ def set_agents(ai_agent):
 
 # Get the current game state for player 0
 def get_game_state(player_id=0):
+    global ai_played_draw
     state_info = env.get_state(player_id)  # Get the state for player 0
     raw_state = state_info['raw_obs']
 
@@ -91,25 +95,30 @@ def get_game_state(player_id=0):
         'legal_actions': raw_state.get('legal_actions', []),  # Legal actions available
         'num_cards': raw_state.get('num_cards', []),  # Number of cards per player
         'num_players': raw_state.get('num_players', 2),  # Number of players
-        'current_player': raw_state.get('current_player', 0)  # Current player
+        'current_player': raw_state.get('current_player', 0),  # Current player
+        'ai_played_draw': ai_played_draw
     }
     return game_state
 
 
 def run(action):
     # player_id = state['current_player']
-    global trajectories
-    global player_id
+    global trajectories, player_id, trajectories, ai_played_draw
+
     state = get_game_state(player_id)
 
     trajectories[player_id].append(state)
 
     if not env.is_over():
         if player_id == 0:
+
             next_state, next_player_id = env.step(action, True)
         else:
             # next_state, next_player_id = env.step(action, env.agents[player_id].use_raw)
             ai_action = env.agents[1].step(env.get_state(1))  # Get AI's action (AI is player 1)
+            ai_action_string = env.decode_action_api(ai_action)
+            if ai_action_string == 'draw':
+                ai_played_draw = True
             next_state, next_player_id = env.step(ai_action)  # Apply the AI's action to the environment
             # state = get_game_state()  # Get the new game state
 
