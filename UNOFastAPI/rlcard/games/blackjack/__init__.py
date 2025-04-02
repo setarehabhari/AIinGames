@@ -1,5 +1,5 @@
-from UNOFastAPI.rlcard.games.blackjack.dealer import BlackjackDealer as Dealer
-from UNOFastAPI.rlcard.games.blackjack.judger import BlackjackJudger as Judger
-from UNOFastAPI.rlcard.games.blackjack.player import BlackjackPlayer as Player
-from UNOFastAPI.rlcard.games.blackjack.game import BlackjackGame as Game
+from rlcard.games.blackjack.dealer import BlackjackDealer as Dealer
+from rlcard.games.blackjack.judger import BlackjackJudger as Judger
+from rlcard.games.blackjack.player import BlackjackPlayer as Player
+from rlcard.games.blackjack.game import BlackjackGame as Game
 

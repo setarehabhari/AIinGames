@@ -1,4 +1,4 @@
-from UNOFastAPI.rlcard.games.limitholdem import Player
+from rlcard.games.limitholdem import Player
 
 
 class NolimitholdemPlayer(Player):

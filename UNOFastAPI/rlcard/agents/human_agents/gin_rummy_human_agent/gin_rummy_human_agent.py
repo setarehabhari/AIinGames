@@ -7,8 +7,8 @@
 
 import time
 
-from UNOFastAPI.rlcard.games.gin_rummy.utils.action_event import ActionEvent
-from UNOFastAPI.rlcard.games.gin_rummy.utils.gin_rummy_error import GinRummyProgramError
+from rlcard.games.gin_rummy.utils.action_event import ActionEvent
+from rlcard.games.gin_rummy.utils.gin_rummy_error import GinRummyProgramError
 
 
 class HumanAgent(object):

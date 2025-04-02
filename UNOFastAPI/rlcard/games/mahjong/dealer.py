@@ -1,4 +1,4 @@
-from UNOFastAPI.rlcard.games.mahjong.utils import init_deck
+from rlcard.games.mahjong.utils import init_deck
 
 
 class MahjongDealer:

@@ -10,7 +10,7 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from .game_canvas import GameCanvas
 
-from UNOFastAPI.rlcard.games.gin_rummy.utils.gin_rummy_error import GinRummyProgramError
+from rlcard.games.gin_rummy.utils.gin_rummy_error import GinRummyProgramError
 
 from .player_type import PlayerType
 from .canvas_item import CanvasItem

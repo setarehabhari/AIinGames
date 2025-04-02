@@ -1,4 +1,4 @@
-from UNOFastAPI.rlcard.games.limitholdem import Judger
+from rlcard.games.limitholdem import Judger
 
 
 class NolimitholdemJudger(Judger):

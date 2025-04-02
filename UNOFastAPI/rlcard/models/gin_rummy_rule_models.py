@@ -10,20 +10,20 @@ from typing import TYPE_CHECKING
 from collections import OrderedDict
 
 if TYPE_CHECKING:
-    from UNOFastAPI.rlcard.core import Card
+    from rlcard.core import Card
 
 from typing import List
 
 import numpy as np
 
-import UNOFastAPI.rlcard as rlcard
+import rlcard as rlcard
 
-from UNOFastAPI.rlcard.models.model import Model
+from rlcard.models.model import Model
 
-from UNOFastAPI.rlcard.games.gin_rummy.utils.action_event import *
+from rlcard.games.gin_rummy.utils.action_event import *
 
-import UNOFastAPI.rlcard as rlcard.games.gin_rummy.utils.melding as melding
-import UNOFastAPI.rlcard as rlcard.games.gin_rummy.utils.utils as utils
+import rlcard as rlcard.games.gin_rummy.utils.melding as melding
+import rlcard as rlcard.games.gin_rummy.utils.utils as utils
 
 
 class GinRummyNoviceRuleAgent(object):

@@ -3,8 +3,8 @@
 
 import numpy as np
 
-import UNOFastAPI.rlcard as rlcard
-from UNOFastAPI.rlcard.models.model import Model
+import rlcard as rlcard
+from rlcard.models.model import Model
 
 class UNORuleAgentV1(object):
     ''' UNO Rule agent version 1

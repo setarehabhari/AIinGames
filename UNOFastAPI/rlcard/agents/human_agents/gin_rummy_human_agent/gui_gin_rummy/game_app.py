@@ -8,15 +8,15 @@
 # from __future__ import annotations
 from typing import TYPE_CHECKING
 if TYPE_CHECKING:
-    from UNOFastAPI.rlcard.envs.gin_rummy import GinRummyEnv
+    from rlcard.envs.gin_rummy import GinRummyEnv
 
 from typing import Callable
 
 import tkinter as tk
 
-import UNOFastAPI.rlcard as rlcard
+import rlcard as rlcard
 
-from UNOFastAPI.rlcard.agents.random_agent import RandomAgent
+from rlcard.agents.random_agent import RandomAgent
 
 from ..gin_rummy_human_agent import HumanAgent
 

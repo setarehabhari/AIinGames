@@ -1,7 +1,7 @@
 ''' Limit Hold 'em rule model
 '''
-import UNOFastAPI.rlcard as rlcard
-from UNOFastAPI.rlcard.models.model import Model
+import rlcard as rlcard
+from rlcard.models.model import Model
 
 class LimitholdemRuleAgentV1(object):
     ''' Limit Hold 'em Rule agent version 1

@@ -1,7 +1,7 @@
 from collections import Counter, OrderedDict
 import numpy as np
 
-from UNOFastAPI.rlcard.envs import Env
+from rlcard.envs import Env
 
 
 class DoudizhuEnv(Env):
@@ -9,9 +9,9 @@ class DoudizhuEnv(Env):
     '''
 
     def __init__(self, config):
-        from UNOFastAPI.rlcard.games.doudizhu.utils import ACTION_2_ID, ID_2_ACTION
-        from UNOFastAPI.rlcard.games.doudizhu.utils import cards2str, cards2str_with_suit
-        from UNOFastAPI.rlcard.games.doudizhu import Game
+        from rlcard.games.doudizhu.utils import ACTION_2_ID, ID_2_ACTION
+        from rlcard.games.doudizhu.utils import cards2str, cards2str_with_suit
+        from rlcard.games.doudizhu import Game
         self._cards2str = cards2str
         self._cards2str_with_suit = cards2str_with_suit
         self._ACTION_2_ID = ACTION_2_ID

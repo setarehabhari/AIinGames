@@ -1,8 +1,8 @@
 import unittest
 import numpy as np
 
-import UNOFastAPI.rlcard as rlcard
-from UNOFastAPI.rlcard.agents.cfr_agent import CFRAgent
+import rlcard as rlcard
+from rlcard.agents.cfr_agent import CFRAgent
 
 class TestNFSP(unittest.TestCase):
 

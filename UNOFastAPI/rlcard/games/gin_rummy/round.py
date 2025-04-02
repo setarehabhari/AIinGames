@@ -9,7 +9,7 @@ if TYPE_CHECKING:
 
 from typing import List
 
-from UNOFastAPI.rlcard.games.gin_rummy.dealer import GinRummyDealer
+from rlcard.games.gin_rummy.dealer import GinRummyDealer
 
 from .utils.action_event import DrawCardAction, PickUpDiscardAction, DeclareDeadHandAction
 from .utils.action_event import DiscardAction, KnockAction, GinAction
@@ -25,8 +25,8 @@ from .utils.gin_rummy_error import GinRummyProgramError
 from .player import GinRummyPlayer
 from . import judge
 
-from UNOFastAPI.rlcard.games.gin_rummy.utils import melding
-from UNOFastAPI.rlcard.games.gin_rummy.utils import utils
+from rlcard.games.gin_rummy.utils import melding
+from rlcard.games.gin_rummy.utils import utils
 
 
 class GinRummyRound:

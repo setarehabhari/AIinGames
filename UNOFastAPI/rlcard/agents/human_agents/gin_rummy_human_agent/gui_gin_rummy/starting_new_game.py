@@ -20,8 +20,8 @@ from . import utils
 
 from .env_thread import EnvThread
 
-import UNOFastAPI.rlcard as rlcard.games.gin_rummy.utils.utils as gin_rummy_utils
-from UNOFastAPI.rlcard.games.gin_rummy.utils.gin_rummy_error import GinRummyProgramError
+import rlcard as rlcard.games.gin_rummy.utils.utils as gin_rummy_utils
+from rlcard.games.gin_rummy.utils.gin_rummy_error import GinRummyProgramError
 
 
 def start_new_game(game_canvas: 'GameCanvas'):

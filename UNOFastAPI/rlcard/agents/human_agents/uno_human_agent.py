@@ -1,4 +1,4 @@
-from UNOFastAPI.rlcard.games.uno.card import UnoCard
+from rlcard.games.uno.card import UnoCard
 
 class HumanAgent(object):
     ''' A human agent for Leduc Holdem. It can be used to play against trained models

@@ -97,8 +97,8 @@ Conda安装只包含卡牌环境，您需要按照您的需求手动安装PyTorc
 以下是一个**小例子**
 
 ```python
-import UNOFastAPI.rlcard as rlcard
-from UNOFastAPI.rlcard.agents import RandomAgent
+import rlcard as rlcard
+from rlcard.agents import RandomAgent
 
 env = rlcard.make('blackjack')
 env.set_agents([RandomAgent(num_actions=env.num_actions)])

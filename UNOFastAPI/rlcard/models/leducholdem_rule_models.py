@@ -1,7 +1,7 @@
 ''' Leduc Hold 'em rule model
 '''
-import UNOFastAPI.rlcard as rlcard
-from UNOFastAPI.rlcard.models.model import Model
+import rlcard as rlcard
+from rlcard.models.model import Model
 
 class LeducHoldemRuleAgentV1(object):
     ''' Leduc Hold 'em Rule agent version 1

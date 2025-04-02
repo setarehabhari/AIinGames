@@ -15,7 +15,7 @@ from . import info_messaging
 from . import utils
 
 from .configurations import DECLARE_DEAD_HAND_ACTION_ID
-from UNOFastAPI.rlcard.games.gin_rummy.game import GinRummyGame
+from rlcard.games.gin_rummy.game import GinRummyGame
 
 
 #

@@ -5,10 +5,10 @@ import functools
 from heapq import merge
 import numpy as np
 
-from UNOFastAPI.rlcard.games.doudizhu.utils import cards2str, doudizhu_sort_card, CARD_RANK_STR
-from UNOFastAPI.rlcard.games.doudizhu import Player
-from UNOFastAPI.rlcard.games.doudizhu import Round
-from UNOFastAPI.rlcard.games.doudizhu import Judger
+from rlcard.games.doudizhu.utils import cards2str, doudizhu_sort_card, CARD_RANK_STR
+from rlcard.games.doudizhu import Player
+from rlcard.games.doudizhu import Round
+from rlcard.games.doudizhu import Judger
 
 
 class DoudizhuGame:

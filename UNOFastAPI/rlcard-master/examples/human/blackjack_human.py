@@ -1,10 +1,10 @@
 ''' A toy example of self playing for Blackjack
 '''
 
-import UNOFastAPI.rlcard as rlcard
-from UNOFastAPI.rlcard.agents import RandomAgent as RandomAgent
-from UNOFastAPI.rlcard.agents import BlackjackHumanAgent as HumanAgent
-from UNOFastAPI.rlcard.utils.utils import print_card
+import rlcard as rlcard
+from rlcard.agents import RandomAgent as RandomAgent
+from rlcard.agents import BlackjackHumanAgent as HumanAgent
+from rlcard.utils.utils import print_card
 
 # Make environment
 num_players = 2

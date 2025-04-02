@@ -2,7 +2,7 @@
 """Implement no limit texas holdem Round class"""
 from enum import Enum
 
-from UNOFastAPI.rlcard.games.limitholdem import PlayerStatus
+from rlcard.games.limitholdem import PlayerStatus
 
 
 class Action(Enum):

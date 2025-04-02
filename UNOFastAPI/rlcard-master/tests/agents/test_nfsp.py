@@ -2,7 +2,7 @@ import unittest
 import torch
 import numpy as np
 
-from UNOFastAPI.rlcard.agents.nfsp_agent import NFSPAgent
+from rlcard.agents.nfsp_agent import NFSPAgent
 
 class TestNFSP(unittest.TestCase):
 

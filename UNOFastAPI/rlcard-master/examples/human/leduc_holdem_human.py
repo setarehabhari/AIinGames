@@ -1,10 +1,10 @@
 ''' A toy example of playing against pretrianed AI on Leduc Hold'em
 '''
 
-import UNOFastAPI.rlcard as rlcard
-from UNOFastAPI.rlcard import models
-from UNOFastAPI.rlcard.agents import LeducholdemHumanAgent as HumanAgent
-from UNOFastAPI.rlcard.utils import print_card
+import rlcard as rlcard
+from rlcard import models
+from rlcard.agents import LeducholdemHumanAgent as HumanAgent
+from rlcard.utils import print_card
 
 # Make environment
 env = rlcard.make('leduc-holdem')

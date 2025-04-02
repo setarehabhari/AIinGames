@@ -3,10 +3,10 @@ import os
 import numpy as np
 from collections import OrderedDict
 
-import UNOFastAPI.rlcard as rlcard
-from UNOFastAPI.rlcard.envs import Env
-from UNOFastAPI.rlcard.games.leducholdem import Game
-from UNOFastAPI.rlcard.utils import *
+import rlcard as rlcard
+from rlcard.envs import Env
+from rlcard.games.leducholdem import Game
+from rlcard.utils import *
 
 DEFAULT_GAME_CONFIG = {
         'game_num_players': 2,

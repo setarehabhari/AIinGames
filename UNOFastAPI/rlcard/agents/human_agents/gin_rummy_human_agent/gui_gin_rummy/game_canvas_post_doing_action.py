@@ -12,12 +12,12 @@ if TYPE_CHECKING:
 
 from typing import List, Tuple
 
-from UNOFastAPI.rlcard.games.base import Card
+from rlcard.games.base import Card
 
-import UNOFastAPI.rlcard as rlcard.games.gin_rummy.judge as judge
-import UNOFastAPI.rlcard as rlcard.games.gin_rummy.utils.utils as gin_rummy_utils
+import rlcard as rlcard.games.gin_rummy.judge as judge
+import rlcard as rlcard.games.gin_rummy.utils.utils as gin_rummy_utils
 
-from UNOFastAPI.rlcard.games.gin_rummy.utils.melding import get_best_meld_clusters
+from rlcard.games.gin_rummy.utils.melding import get_best_meld_clusters
 
 from . import configurations
 from . import status_messaging

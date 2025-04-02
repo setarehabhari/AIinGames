@@ -3,8 +3,8 @@
 '''
 import functools
 
-from UNOFastAPI.rlcard.games.doudizhu.utils import get_gt_cards
-from UNOFastAPI.rlcard.games.doudizhu.utils import cards2str, doudizhu_sort_card
+from rlcard.games.doudizhu.utils import get_gt_cards
+from rlcard.games.doudizhu.utils import cards2str, doudizhu_sort_card
 
 
 class DoudizhuPlayer:

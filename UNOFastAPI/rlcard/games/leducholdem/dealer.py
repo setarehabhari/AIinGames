@@ -1,5 +1,5 @@
-from UNOFastAPI.rlcard.games.base import Card
-from UNOFastAPI.rlcard.games.limitholdem import Dealer
+from rlcard.games.base import Card
+from rlcard.games.limitholdem import Dealer
 
 class LeducholdemDealer(Dealer):
 

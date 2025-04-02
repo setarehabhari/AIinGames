@@ -1,7 +1,7 @@
 from collections import OrderedDict
 
 from .model import DMCAgent
-from UNOFastAPI.rlcard.utils.pettingzoo_utils import wrap_state
+from rlcard.utils.pettingzoo_utils import wrap_state
 
 
 class DMCAgentPettingZoo(DMCAgent):

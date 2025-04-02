@@ -8,7 +8,7 @@
 
 import numpy as np
 
-from UNOFastAPI.rlcard.games.bridge.utils.action_event import ActionEvent
+from rlcard.games.bridge.utils.action_event import ActionEvent
 
 
 class BridgeDefenderNoviceRuleAgent(object):

@@ -1,4 +1,4 @@
-from UNOFastAPI.rlcard.utils import *
+from rlcard.utils import *
 
 class Env(object):
     '''

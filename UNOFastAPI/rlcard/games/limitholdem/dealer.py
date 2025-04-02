@@ -1,4 +1,4 @@
-from UNOFastAPI.rlcard.utils.utils import init_standard_deck
+from rlcard.utils.utils import init_standard_deck
 
 
 class LimitHoldemDealer:

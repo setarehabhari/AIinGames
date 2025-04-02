@@ -12,11 +12,11 @@ if TYPE_CHECKING:
 
 from typing import List
 
-from UNOFastAPI.rlcard.games.gin_rummy.game import GinRummyGame
+from rlcard.games.gin_rummy.game import GinRummyGame
 
-from UNOFastAPI.rlcard.games.gin_rummy.utils.action_event import DrawCardAction, PickUpDiscardAction, DeclareDeadHandAction
-from UNOFastAPI.rlcard.games.gin_rummy.utils.action_event import DiscardAction, KnockAction, GinAction
-from UNOFastAPI.rlcard.games.gin_rummy.utils.move import ScoreSouthMove
+from rlcard.games.gin_rummy.utils.action_event import DrawCardAction, PickUpDiscardAction, DeclareDeadHandAction
+from rlcard.games.gin_rummy.utils.action_event import DiscardAction, KnockAction, GinAction
+from rlcard.games.gin_rummy.utils.move import ScoreSouthMove
 
 from . import configurations
 

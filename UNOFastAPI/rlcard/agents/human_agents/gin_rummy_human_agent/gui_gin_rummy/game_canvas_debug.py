@@ -12,9 +12,9 @@ if TYPE_CHECKING:
 
 from . import configurations
 
-from UNOFastAPI.rlcard.games.gin_rummy.player import GinRummyPlayer
+from rlcard.games.gin_rummy.player import GinRummyPlayer
 
-import UNOFastAPI.rlcard as rlcard.games.gin_rummy.utils.utils as gin_rummy_utils
+import rlcard as rlcard.games.gin_rummy.utils.utils as gin_rummy_utils
 
 
 class GameCanvasDebug(object):

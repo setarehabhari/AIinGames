@@ -15,9 +15,9 @@ from typing import List
 import threading
 import time
 
-from UNOFastAPI.rlcard.envs.gin_rummy import GinRummyEnv
+from rlcard.envs.gin_rummy import GinRummyEnv
 
-from UNOFastAPI.rlcard.games.gin_rummy.utils.move import GinRummyMove, ScoreSouthMove
+from rlcard.games.gin_rummy.utils.move import GinRummyMove, ScoreSouthMove
 
 from ..gin_rummy_human_agent import HumanAgent
 

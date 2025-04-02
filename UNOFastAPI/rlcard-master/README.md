@@ -137,8 +137,8 @@ Conda installation only provides the card environments, you need to manually ins
 A **short example** is as below.
 
 ```python
-import UNOFastAPI.rlcard as rlcard
-from UNOFastAPI.rlcard.agents import RandomAgent
+import rlcard as rlcard
+from rlcard.agents import RandomAgent
 
 env = rlcard.make('blackjack')
 env.set_agents([RandomAgent(num_actions=env.num_actions)])

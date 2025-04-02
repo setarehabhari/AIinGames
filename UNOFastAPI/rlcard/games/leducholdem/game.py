@@ -1,12 +1,12 @@
 import numpy as np
 from copy import copy
 
-from UNOFastAPI.rlcard.games.leducholdem import Dealer
-from UNOFastAPI.rlcard.games.leducholdem import Player
-from UNOFastAPI.rlcard.games.leducholdem import Judger
-from UNOFastAPI.rlcard.games.leducholdem import Round
+from rlcard.games.leducholdem import Dealer
+from rlcard.games.leducholdem import Player
+from rlcard.games.leducholdem import Judger
+from rlcard.games.leducholdem import Round
 
-from UNOFastAPI.rlcard.games.limitholdem import Game
+from rlcard.games.limitholdem import Game
 
 class LeducholdemGame(Game):
 

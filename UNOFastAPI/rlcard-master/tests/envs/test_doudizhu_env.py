@@ -1,7 +1,7 @@
 import unittest
 
-import UNOFastAPI.rlcard as rlcard
-from UNOFastAPI.rlcard.agents.random_agent import RandomAgent
+import rlcard as rlcard
+from rlcard.agents.random_agent import RandomAgent
 from .determism_util import is_deterministic
 
 

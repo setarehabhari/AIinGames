@@ -4,7 +4,7 @@ import collections
 import os
 import pickle
 
-from UNOFastAPI.rlcard.utils.utils import *
+from rlcard.utils.utils import *
 
 class CFRAgent():
     ''' Implement CFR (chance sampling) algorithm

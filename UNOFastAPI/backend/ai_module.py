@@ -1,4 +1,4 @@
-import UNOFastAPI.rlcard as rlcard
+import rlcard as rlcard
 import numpy as np
 #
 env = rlcard.make('uno')

@@ -1,10 +1,10 @@
 import torch
-from UNOFastAPI.rlcard.agents.human_agents.uno_human_agent import HumanAgent
+from rlcard.agents.human_agents.uno_human_agent import HumanAgent
 import os
 
-from UNOFastAPI.rlcard.agents import DQNAgent
-from UNOFastAPI.rlcard.utils import get_device
-import UNOFastAPI.rlcard as rlcard
+from rlcard.agents import DQNAgent
+from rlcard.utils import get_device
+import rlcard as rlcard
 import numpy
 
 env = rlcard.make('uno')
@@ -26,14 +26,14 @@ def load_model(model_path, env=None, position=None, device=None):
         agent = torch.load(model_path, map_location=device, weights_only=False)
         agent.set_device(device)
     # elif os.path.isdir(model_path):  # CFR model
-    #     from UNOFastAPI.rlcard.agents import CFRAgent
+    #     from rlcard.agents import CFRAgent
     #     agent = CFRAgent(env, model_path)
     #     agent.load()
     # elif model_path == 'random':  # Random model
-    #     from UNOFastAPI.rlcard.agents import RandomAgent
+    #     from rlcard.agents import RandomAgent
     #     agent = RandomAgent(num_actions=env.num_actions)
     # else:  # A model in the model zoo
-    #     from UNOFastAPI.rlcard import models
+    #     from rlcard import models
     #     agent = models.load(model_path).agents[position]
 
     return agent
@@ -57,8 +57,9 @@ def initialize_game():
 
 # Load the AI agent
 def load_ai_agent():
-    # try:
-        file_path = "C:\\Users\\abhar\\extras\\UNI\\AI-IN-GAMES\\AIinGames\\UNOFastAPI\\backend\\model.pth"
+    try:
+        # TODO: #AIINGAMES change based on directory
+        file_path = "C:\\UniCalgary\\AI-In-Games\\UNO-Game\\AIinGames\\UNOFastAPI\\backend\\model.pth"
         # Check if the file exists
         if os.path.exists(file_path):
             print("The file exists.")
@@ -68,9 +69,9 @@ def load_ai_agent():
         dqn_agent = load_model(file_path, env, device=get_device())
         print("AI agent loaded successfully.")
         return dqn_agent
-    # except Exception as e:
-    #     print(f"Error loading AI agent: {e}")
-    #     return None
+    except Exception as e:
+        print(f"Error loading AI agent: {e}")
+        return None
 
 
 # Set the agents in the environment

@@ -17,7 +17,7 @@ from . import info_messaging
 from . import starting_new_game
 from . import utils
 
-from UNOFastAPI.rlcard.games.gin_rummy.utils.gin_rummy_error import GinRummyProgramError
+from rlcard.games.gin_rummy.utils.gin_rummy_error import GinRummyProgramError
 
 
 def handle_tap_discard_pile(hit_item: CanvasItem, game_canvas: 'GameCanvas'):

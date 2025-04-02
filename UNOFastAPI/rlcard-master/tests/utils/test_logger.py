@@ -2,7 +2,7 @@ import unittest
 import os
 import shutil
 
-from UNOFastAPI.rlcard.utils.logger import Logger
+from rlcard.utils.logger import Logger
 
 class TestLogger(unittest.TestCase):
 

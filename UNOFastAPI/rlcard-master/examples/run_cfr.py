@@ -3,12 +3,12 @@
 import os
 import argparse
 
-import UNOFastAPI.rlcard as rlcard
-from UNOFastAPI.rlcard.agents import (
+import rlcard as rlcard
+from rlcard.agents import (
     CFRAgent,
     RandomAgent,
 )
-from UNOFastAPI.rlcard.utils import (
+from rlcard.utils import (
     set_seed,
     tournament,
     Logger,

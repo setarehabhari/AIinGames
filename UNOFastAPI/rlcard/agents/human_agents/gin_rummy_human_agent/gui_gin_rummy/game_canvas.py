@@ -31,10 +31,10 @@ from .game_canvas_query import GameCanvasQuery
 from .game_canvas_updater import GameCanvasUpdater
 from .player_type import PlayerType
 
-import UNOFastAPI.rlcard as rlcard.games.gin_rummy.utils.utils as gin_rummy_utils
+import rlcard as rlcard.games.gin_rummy.utils.utils as gin_rummy_utils
 
-from UNOFastAPI.rlcard.games.gin_rummy.utils.action_event import KnockAction, GinAction
-from UNOFastAPI.rlcard.games.gin_rummy.utils.gin_rummy_error import GinRummyProgramError
+from rlcard.games.gin_rummy.utils.action_event import KnockAction, GinAction
+from rlcard.games.gin_rummy.utils.gin_rummy_error import GinRummyProgramError
 
 
 class GameCanvas(tk.Canvas):

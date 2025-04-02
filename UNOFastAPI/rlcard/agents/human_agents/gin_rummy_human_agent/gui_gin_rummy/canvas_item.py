@@ -8,8 +8,8 @@
 # from __future__ import annotations
 from typing import TYPE_CHECKING
 if TYPE_CHECKING:
-    from UNOFastAPI.rlcard.agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas import GameCanvas
-    from UNOFastAPI.rlcard.agents.gin_rummy_human_agent.gui_cards.card_image import CardImage
+    from rlcard.agents.gin_rummy_human_agent.gui_gin_rummy.game_canvas import GameCanvas
+    from rlcard.agents.gin_rummy_human_agent.gui_cards.card_image import CardImage
 
 
 class CanvasItem(object):

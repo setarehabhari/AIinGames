@@ -2,7 +2,7 @@ import unittest
 import torch
 import numpy as np
 
-from UNOFastAPI.rlcard.agents.dqn_agent import DQNAgent
+from rlcard.agents.dqn_agent import DQNAgent
 
 class TestDQN(unittest.TestCase):
 

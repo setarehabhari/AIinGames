@@ -5,9 +5,9 @@
 import functools
 import numpy as np
 
-from UNOFastAPI.rlcard.games.doudizhu import Dealer
-from UNOFastAPI.rlcard.games.doudizhu.utils import cards2str, doudizhu_sort_card
-from UNOFastAPI.rlcard.games.doudizhu.utils import CARD_RANK_STR, CARD_RANK_STR_INDEX
+from rlcard.games.doudizhu import Dealer
+from rlcard.games.doudizhu.utils import cards2str, doudizhu_sort_card
+from rlcard.games.doudizhu.utils import CARD_RANK_STR, CARD_RANK_STR_INDEX
 
 
 class DoudizhuRound:

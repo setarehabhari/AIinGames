@@ -2,9 +2,9 @@
 '''
 import os
 
-import UNOFastAPI.rlcard as rlcard
-from UNOFastAPI.rlcard.agents import CFRAgent
-from UNOFastAPI.rlcard.models.model import Model
+import rlcard as rlcard
+from rlcard.agents import CFRAgent
+from rlcard.models.model import Model
 
 # Root path of pretrianed models
 ROOT_PATH = os.path.join(rlcard.__path__[0], 'models/pretrained')

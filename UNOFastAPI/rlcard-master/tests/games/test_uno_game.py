@@ -1,10 +1,10 @@
 import unittest
 import numpy as np
 
-from UNOFastAPI.rlcard.games.uno.game import UnoGame as Game
-from UNOFastAPI.rlcard.games.uno.player import UnoPlayer as Player
-from UNOFastAPI.rlcard.games.uno.utils import ACTION_LIST
-from UNOFastAPI.rlcard.games.uno.utils import hand2dict, encode_hand, encode_target
+from rlcard.games.uno.game import UnoGame as Game
+from rlcard.games.uno.player import UnoPlayer as Player
+from rlcard.games.uno.utils import ACTION_LIST
+from rlcard.games.uno.utils import hand2dict, encode_hand, encode_target
 
 class TestUnoMethods(unittest.TestCase):
 

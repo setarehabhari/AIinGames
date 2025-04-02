@@ -14,9 +14,9 @@ We provide a random agent that can play randomly on each environment. Example co
 import argparse
 import pprint
 
-import UNOFastAPI.rlcard as rlcard
-from UNOFastAPI.rlcard.agents import RandomAgent
-from UNOFastAPI.rlcard.utils import set_seed
+import rlcard as rlcard
+from rlcard.agents import RandomAgent
+from rlcard.utils import set_seed
 
 def run(args):
     # Make environment
@@ -103,9 +103,9 @@ import argparse
 
 import torch
 
-import UNOFastAPI.rlcard as rlcard
-from UNOFastAPI.rlcard.agents import RandomAgent
-from UNOFastAPI.rlcard.utils import (
+import rlcard as rlcard
+from rlcard.agents import RandomAgent
+from rlcard.utils import (
     get_device,
     set_seed,
     tournament,
@@ -132,7 +132,7 @@ def train(args):
 
     # Initialize the agent and use random agents as opponents
     if args.algorithm == 'dqn':
-        from UNOFastAPI.rlcard.agents import DQNAgent
+        from rlcard.agents import DQNAgent
         agent = DQNAgent(
             num_actions=env.num_actions,
             state_shape=env.state_shape[0],
@@ -140,7 +140,7 @@ def train(args):
             device=device,
         )
     elif args.algorithm == 'nfsp':
-        from UNOFastAPI.rlcard.agents import NFSPAgent
+        from rlcard.agents import NFSPAgent
         agent = NFSPAgent(
             num_actions=env.num_actions,
             state_shape=env.state_shape[0],
@@ -308,12 +308,12 @@ To show how we can use `step` and `step_back` to traverse the game tree, we prov
 import os
 import argparse
 
-import UNOFastAPI.rlcard as rlcard
-from UNOFastAPI.rlcard.agents import (
+import rlcard as rlcard
+from rlcard.agents import (
     CFRAgent,
     RandomAgent,
 )
-from UNOFastAPI.rlcard.utils import (
+from rlcard.utils import (
     set_seed,
     tournament,
     Logger,
@@ -439,10 +439,10 @@ Iteration 300
 ## Having Fun with Pretrained Leduc Model
 We have designed simple human interfaces to play against the pretrained model. Leduc Hold'em is a simplified version of Texas Hold'em. Rules can be found [here](games.md#leduc-holdem). Example of playing against Leduc Hold'em CFR (chance sampling) model is as below. You can find the code in [examples/human/leduc\_holdem\_human.py](../examples/human/leduc_holdem_human.py)
 ```python
-import UNOFastAPI.rlcard as rlcard
-from UNOFastAPI.rlcard import models
-from UNOFastAPI.rlcard.agents import LeducholdemHumanAgent as HumanAgent
-from UNOFastAPI.rlcard.utils import print_card
+import rlcard as rlcard
+from rlcard import models
+from rlcard.agents import LeducholdemHumanAgent as HumanAgent
+from rlcard.utils import print_card
 
 # Make environment
 env = rlcard.make('leduc-holdem')
@@ -532,8 +532,8 @@ import argparse
 
 import torch
 
-import UNOFastAPI.rlcard as rlcard
-from UNOFastAPI.rlcard.agents.dmc_agent import DMCTrainer
+import rlcard as rlcard
+from rlcard.agents.dmc_agent import DMCTrainer
 
 def train(args):
 
@@ -664,12 +664,12 @@ We also provide an example to compare agents. You can find the code in [examples
 import os
 import argparse
 
-import UNOFastAPI.rlcard as rlcard
-from UNOFastAPI.rlcard.agents import (
+import rlcard as rlcard
+from rlcard.agents import (
     DQNAgent,
     RandomAgent,
 )
-from UNOFastAPI.rlcard.utils import (
+from rlcard.utils import (
     get_device,
     set_seed,
     tournament,
@@ -681,14 +681,14 @@ def load_model(model_path, env=None, position=None, device=None):
         agent = torch.load(model_path, map_location=device)
         agent.set_device(device)
     elif os.path.isdir(model_path):  # CFR model
-        from UNOFastAPI.rlcard.agents import CFRAgent
+        from rlcard.agents import CFRAgent
         agent = CFRAgent(env, model_path)
         agent.load()
     elif model_path == 'random':  # Random model
-        from UNOFastAPI.rlcard.agents import RandomAgent
+        from rlcard.agents import RandomAgent
         agent = RandomAgent(num_actions=env.num_actions)
     else:  # A model in the model zoo
-        from UNOFastAPI.rlcard import models
+        from rlcard import models
         agent = models.load(model_path).agents[position]
     
     return agent

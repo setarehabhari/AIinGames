@@ -3,9 +3,9 @@
 
 import numpy as np
 
-import UNOFastAPI.rlcard as rlcard
-from UNOFastAPI.rlcard.games.doudizhu.utils import CARD_TYPE, INDEX
-from UNOFastAPI.rlcard.models.model import Model
+import rlcard as rlcard
+from rlcard.games.doudizhu.utils import CARD_TYPE, INDEX
+from rlcard.models.model import Model
 
 class DouDizhuRuleAgentV1(object):
     ''' Dou Dizhu Rule agent version 1

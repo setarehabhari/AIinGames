@@ -2,13 +2,13 @@ from enum import Enum
 
 import numpy as np
 from copy import deepcopy
-from UNOFastAPI.rlcard.games.limitholdem import Game
-from UNOFastAPI.rlcard.games.limitholdem import PlayerStatus
+from rlcard.games.limitholdem import Game
+from rlcard.games.limitholdem import PlayerStatus
 
-from UNOFastAPI.rlcard.games.nolimitholdem import Dealer
-from UNOFastAPI.rlcard.games.nolimitholdem import Player
-from UNOFastAPI.rlcard.games.nolimitholdem import Judger
-from UNOFastAPI.rlcard.games.nolimitholdem import Round, Action
+from rlcard.games.nolimitholdem import Dealer
+from rlcard.games.nolimitholdem import Player
+from rlcard.games.nolimitholdem import Judger
+from rlcard.games.nolimitholdem import Round, Action
 
 
 class Stage(Enum):

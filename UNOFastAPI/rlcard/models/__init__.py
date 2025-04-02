@@ -1,6 +1,6 @@
 ''' Register rule-based models or pre-trianed models
 '''
-from UNOFastAPI.rlcard.models.registration import register, load
+from rlcard.models.registration import register, load
 
 register(
     model_id = 'leduc-holdem-cfr',

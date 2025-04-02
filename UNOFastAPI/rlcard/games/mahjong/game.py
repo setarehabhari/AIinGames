@@ -1,10 +1,10 @@
 import numpy as np
 from copy import deepcopy
 
-from UNOFastAPI.rlcard.games.mahjong import Dealer
-from UNOFastAPI.rlcard.games.mahjong import Player
-from UNOFastAPI.rlcard.games.mahjong import Round
-from UNOFastAPI.rlcard.games.mahjong import Judger
+from rlcard.games.mahjong import Dealer
+from rlcard.games.mahjong import Player
+from rlcard.games.mahjong import Round
+from rlcard.games.mahjong import Judger
 
 class MahjongGame:
 

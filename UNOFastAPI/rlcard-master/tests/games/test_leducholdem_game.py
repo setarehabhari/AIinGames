@@ -1,10 +1,10 @@
 import unittest
 import numpy as np
 
-from UNOFastAPI.rlcard.games.leducholdem.game import LeducholdemGame as Game
-from UNOFastAPI.rlcard.games.leducholdem.player import LeducholdemPlayer as Player
-from UNOFastAPI.rlcard.games.leducholdem.judger import LeducholdemJudger as Judger
-from UNOFastAPI.rlcard.games.base import Card
+from rlcard.games.leducholdem.game import LeducholdemGame as Game
+from rlcard.games.leducholdem.player import LeducholdemPlayer as Player
+from rlcard.games.leducholdem.judger import LeducholdemJudger as Judger
+from rlcard.games.base import Card
 
 class TestLeducholdemMethods(unittest.TestCase):
 

@@ -1,9 +1,9 @@
 ''' A toy example of playing against rule-based bot on UNO
 '''
 
-import UNOFastAPI.rlcard as rlcard
-from UNOFastAPI.rlcard import models
-from UNOFastAPI.rlcard.agents.human_agents.uno_human_agent import HumanAgent, _print_action
+import rlcard as rlcard
+from rlcard import models
+from rlcard.agents.human_agents.uno_human_agent import HumanAgent, _print_action
 
 # Make environment
 env = rlcard.make('uno')

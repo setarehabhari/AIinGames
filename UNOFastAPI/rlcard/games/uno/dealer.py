@@ -1,5 +1,5 @@
 
-from UNOFastAPI.rlcard.games.uno.utils import init_deck
+from rlcard.games.uno.utils import init_deck
 
 
 class UnoDealer:

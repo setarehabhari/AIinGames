@@ -16,7 +16,7 @@ from .player_type import PlayerType
 from . import handling_tap
 from . import utils
 
-from UNOFastAPI.rlcard.games.gin_rummy.utils.gin_rummy_error import GinRummyProgramError
+from rlcard.games.gin_rummy.utils.gin_rummy_error import GinRummyProgramError
 
 
 def on_tap_to_arrange_held_pile(event):

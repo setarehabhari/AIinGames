@@ -7,14 +7,14 @@
 import numpy as np
 from collections import OrderedDict
 
-from UNOFastAPI.rlcard.envs import Env
+from rlcard.envs import Env
 
-from UNOFastAPI.rlcard.games.bridge import Game
+from rlcard.games.bridge import Game
 
-from UNOFastAPI.rlcard.games.bridge.game import BridgeGame
-from UNOFastAPI.rlcard.games.bridge.utils.action_event import ActionEvent
-from UNOFastAPI.rlcard.games.bridge.utils.bridge_card import BridgeCard
-from UNOFastAPI.rlcard.games.bridge.utils.move import CallMove, PlayCardMove
+from rlcard.games.bridge.game import BridgeGame
+from rlcard.games.bridge.utils.action_event import ActionEvent
+from rlcard.games.bridge.utils.bridge_card import BridgeCard
+from rlcard.games.bridge.utils.move import CallMove, PlayCardMove
 
 #   [] Why no_bid_action_id in bidding_rep ?
 #       It allows the bidding always to start with North.

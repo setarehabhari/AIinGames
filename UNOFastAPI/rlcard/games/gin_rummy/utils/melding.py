@@ -6,10 +6,10 @@
 
 from typing import List
 
-from UNOFastAPI.rlcard.games.base import Card
+from rlcard.games.base import Card
 
-from UNOFastAPI.rlcard.games.gin_rummy.utils import utils
-from UNOFastAPI.rlcard.games.gin_rummy.utils.gin_rummy_error import GinRummyProgramError
+from rlcard.games.gin_rummy.utils import utils
+from rlcard.games.gin_rummy.utils.gin_rummy_error import GinRummyProgramError
 
 # ===============================================================
 #    Terminology:

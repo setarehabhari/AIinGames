@@ -6,7 +6,7 @@ from collections import OrderedDict
 import threading
 import collections
 
-import UNOFastAPI.rlcard as rlcard
+import rlcard as rlcard
 
 # Read required docs
 ROOT_PATH = rlcard.__path__[0]

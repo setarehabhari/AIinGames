@@ -3,9 +3,9 @@ import os
 import numpy as np
 from collections import OrderedDict
 
-import UNOFastAPI.rlcard as rlcard
-from UNOFastAPI.rlcard.envs import Env
-from UNOFastAPI.rlcard.games.limitholdem import Game
+import rlcard as rlcard
+from rlcard.envs import Env
+from rlcard.games.limitholdem import Game
 
 DEFAULT_GAME_CONFIG = {
         'game_num_players': 2,

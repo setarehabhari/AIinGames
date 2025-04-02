@@ -6,6 +6,6 @@ To add a new environment to the toolkit, generally you should take the following
 
 To test whether the new environment is set up successfully:
 ```python
-import UNOFastAPI.rlcard as rlcard
+import rlcard as rlcard
 rlcard.make(#the new evironment#)
 ```

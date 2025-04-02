@@ -1,9 +1,9 @@
 import unittest
 import numpy as np
-from UNOFastAPI.rlcard.games.nolimitholdem.player import NolimitholdemPlayer as Player
-from UNOFastAPI.rlcard.games.base import Card
-from UNOFastAPI.rlcard.games.limitholdem.judger import LimitHoldemJudger as Judger
-from UNOFastAPI.rlcard.games.limitholdem.utils import Hand
+from rlcard.games.nolimitholdem.player import NolimitholdemPlayer as Player
+from rlcard.games.base import Card
+from rlcard.games.limitholdem.judger import LimitHoldemJudger as Judger
+from rlcard.games.limitholdem.utils import Hand
 
 
 rand_state = np.random.RandomState()

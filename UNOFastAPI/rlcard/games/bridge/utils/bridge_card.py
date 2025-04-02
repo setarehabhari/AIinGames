@@ -4,7 +4,7 @@
     Date created: 11/25/2021
 '''
 
-from UNOFastAPI.rlcard.games.base import Card
+from rlcard.games.base import Card
 
 
 class BridgeCard(Card):

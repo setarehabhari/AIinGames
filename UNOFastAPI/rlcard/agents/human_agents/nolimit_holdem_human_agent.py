@@ -1,4 +1,4 @@
-from UNOFastAPI.rlcard.utils.utils import print_card
+from rlcard.utils.utils import print_card
 
 
 class HumanAgent(object):

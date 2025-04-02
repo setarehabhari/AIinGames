@@ -1,12 +1,13 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
+# from pydantic import BaseModel
 from AIBackend import *
 
 # Initialize FastAPI app
 app = FastAPI()
 import sys
 import os
-sys.path.append(os.path.abspath("C:\\Users\\abhar\\extras\\UNI\\AI-IN-GAMES\\AIinGames\\UNOFastAPI"))
+# TODO: #AIINGAMES change based on directory
+sys.path.append(os.path.abspath("C:\\UniCalgary\\AI-In-Games\\UNO-Game\\AIinGames\\UNOFastAPI"))
 
 @app.get("/start_game")
 def start_game():

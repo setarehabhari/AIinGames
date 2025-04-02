@@ -1,9 +1,9 @@
 from copy import deepcopy
 import numpy as np
 
-from UNOFastAPI.rlcard.games.blackjack import Dealer
-from UNOFastAPI.rlcard.games.blackjack import Player
-from UNOFastAPI.rlcard.games.blackjack import Judger
+from rlcard.games.blackjack import Dealer
+from rlcard.games.blackjack import Player
+from rlcard.games.blackjack import Judger
 
 class BlackjackGame:
 

@@ -1,4 +1,4 @@
-from UNOFastAPI.rlcard.utils.utils import rank2int
+from rlcard.utils.utils import rank2int
 
 class LeducholdemJudger:
     ''' The Judger class for Leduc Hold'em

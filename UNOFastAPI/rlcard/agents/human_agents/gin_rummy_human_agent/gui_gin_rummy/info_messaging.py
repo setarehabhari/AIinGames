@@ -12,9 +12,9 @@ if TYPE_CHECKING:
 
 from typing import List
 
-import UNOFastAPI.rlcard as rlcard.games.gin_rummy.utils.utils as gin_rummy_utils
+import rlcard as rlcard.games.gin_rummy.utils.utils as gin_rummy_utils
 
-from UNOFastAPI.rlcard.games.gin_rummy.utils.thinker import Thinker
+from rlcard.games.gin_rummy.utils.thinker import Thinker
 from .canvas_item import CardItem
 from . import configurations
 

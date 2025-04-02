@@ -6,15 +6,15 @@
 import numpy as np
 from collections import OrderedDict
 
-from UNOFastAPI.rlcard.envs import Env
+from rlcard.envs import Env
 
 class GinRummyEnv(Env):
     ''' GinRummy Environment
     '''
     def __init__(self, config):
-        from UNOFastAPI.rlcard.games.gin_rummy.utils.move import ScoreSouthMove
-        from UNOFastAPI.rlcard.games.gin_rummy.utils import utils
-        from UNOFastAPI.rlcard.games.gin_rummy import Game
+        from rlcard.games.gin_rummy.utils.move import ScoreSouthMove
+        from rlcard.games.gin_rummy.utils import utils
+        from rlcard.games.gin_rummy import Game
         self._ScoreSouthMove = ScoreSouthMove
         self._utils = utils
 

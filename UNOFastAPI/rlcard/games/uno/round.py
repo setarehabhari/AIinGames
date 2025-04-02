@@ -1,5 +1,5 @@
-from UNOFastAPI.rlcard.games.uno.card import UnoCard
-from UNOFastAPI.rlcard.games.uno.utils import cards2list, WILD, WILD_DRAW_4
+from rlcard.games.uno.card import UnoCard
+from rlcard.games.uno.utils import cards2list, WILD, WILD_DRAW_4
 
 
 class UnoRound:
@@ -198,7 +198,10 @@ class UnoRound:
 
         # perform reverse card
         if card.trait == 'reverse':
-            self.direction = -1 * direction
+            # self.direction = -1 * direction
+            self.target = card
+            return
+            print(f"self.direction = {self.direction}")
 
         # perfrom skip card
         elif card.trait == 'skip':
@@ -223,5 +226,6 @@ class UnoRound:
                 #return None
             self.dealer.deal_cards(players[(current + direction) % num_players], 4)
             current = (current + direction) % num_players
+        print(f"fuck {current}, {num_players}, {self.direction}")
         self.current_player = (current + self.direction) % num_players
         self.target = card

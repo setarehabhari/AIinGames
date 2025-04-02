@@ -3,9 +3,9 @@
 import argparse
 import pprint
 
-import UNOFastAPI.rlcard as rlcard
-from UNOFastAPI.rlcard.agents import RandomAgent
-from UNOFastAPI.rlcard.utils import set_seed
+import rlcard as rlcard
+from rlcard.agents import RandomAgent
+from rlcard.utils import set_seed
 
 def run(args):
     # Make environment

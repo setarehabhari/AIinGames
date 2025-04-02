@@ -9,19 +9,19 @@
 from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from .game_canvas import GameCanvas
-    from UNOFastAPI.rlcard.envs.gin_rummy import GinRummyEnv
+    from rlcard.envs.gin_rummy import GinRummyEnv
 from ..gin_rummy_human_agent import HumanAgent
 
 from typing import List
 
-from UNOFastAPI.rlcard.games.gin_rummy.utils.action_event import ActionEvent
-from UNOFastAPI.rlcard.games.gin_rummy.utils.move import GinRummyMove
-from UNOFastAPI.rlcard.games.gin_rummy.utils.move import PlayerMove
-from UNOFastAPI.rlcard.games.gin_rummy.utils.move import DealHandMove
-from UNOFastAPI.rlcard.games.gin_rummy.utils.move import DrawCardMove, PickupDiscardMove, DeclareDeadHandMove
-from UNOFastAPI.rlcard.games.gin_rummy.utils.move import DiscardMove, KnockMove, GinMove
-from UNOFastAPI.rlcard.games.gin_rummy.utils.move import ScoreNorthMove, ScoreSouthMove
-from UNOFastAPI.rlcard.games.gin_rummy.utils.gin_rummy_error import GinRummyProgramError
+from rlcard.games.gin_rummy.utils.action_event import ActionEvent
+from rlcard.games.gin_rummy.utils.move import GinRummyMove
+from rlcard.games.gin_rummy.utils.move import PlayerMove
+from rlcard.games.gin_rummy.utils.move import DealHandMove
+from rlcard.games.gin_rummy.utils.move import DrawCardMove, PickupDiscardMove, DeclareDeadHandMove
+from rlcard.games.gin_rummy.utils.move import DiscardMove, KnockMove, GinMove
+from rlcard.games.gin_rummy.utils.move import ScoreNorthMove, ScoreSouthMove
+from rlcard.games.gin_rummy.utils.gin_rummy_error import GinRummyProgramError
 
 from . import configurations
 from . import handling_tap_discard_pile
@@ -32,7 +32,7 @@ from . import utils
 
 from .player_type import PlayerType
 
-import UNOFastAPI.rlcard as rlcard.games.gin_rummy.utils.utils as gin_rummy_utils
+import rlcard as rlcard.games.gin_rummy.utils.utils as gin_rummy_utils
 
 
 class GameCanvasUpdater(object):

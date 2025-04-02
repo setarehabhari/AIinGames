@@ -1,4 +1,4 @@
-from UNOFastAPI.rlcard.games.limitholdem import Dealer
+from rlcard.games.limitholdem import Dealer
 
 
 class NolimitholdemDealer(Dealer):

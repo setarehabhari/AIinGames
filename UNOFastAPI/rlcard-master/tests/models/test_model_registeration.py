@@ -1,7 +1,7 @@
 import unittest
 
 from  rlcard import models
-from UNOFastAPI.rlcard.models.registration import register, load
+from rlcard.models.registration import register, load
 
 
 class TestRegistration(unittest.TestCase):

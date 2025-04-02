@@ -1,9 +1,9 @@
 import unittest
 import numpy as np
 
-import UNOFastAPI.rlcard as rlcard
-from UNOFastAPI.rlcard.agents.random_agent import RandomAgent
-from UNOFastAPI.rlcard.games.uno.utils import ACTION_LIST
+import rlcard as rlcard
+from rlcard.agents.random_agent import RandomAgent
+from rlcard.games.uno.utils import ACTION_LIST
 from .determism_util import is_deterministic
 
 

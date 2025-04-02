@@ -14,9 +14,9 @@ from typing import List
 
 import tkinter as tk
 
-import UNOFastAPI.rlcard as rlcard.games.gin_rummy.utils.utils as gin_rummy_utils
+import rlcard as rlcard.games.gin_rummy.utils.utils as gin_rummy_utils
 
-from UNOFastAPI.rlcard.games.gin_rummy.utils.gin_rummy_error import GinRummyProgramError
+from rlcard.games.gin_rummy.utils.gin_rummy_error import GinRummyProgramError
 
 from .canvas_item import CardItem, CanvasItem
 from .player_type import PlayerType
