@@ -19,7 +19,7 @@ def get_human_game_state_endpoint():
 
 
 
-@app.post("/player_move")
+@app.post("/play_card")
 async def play_card(card_move: str):
     """
     FastAPI endpoint for processing the AI's move.

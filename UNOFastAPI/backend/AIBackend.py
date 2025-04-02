@@ -18,8 +18,12 @@ from rlcard.utils import (
 
 import numpy
 
-from backend.NewAIModule import suggest_move
+env = rlcard.make('uno')
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
+# from backend.NewAIModule import suggest_move
+
+global player_id, stt, trajectories, human_agent
 
 def load_model(model_path, env=None, position=None, device=None):
     if os.path.isfile(model_path):  # Torch model
@@ -42,16 +46,17 @@ def load_model(model_path, env=None, position=None, device=None):
     return agent
 
 
-# Initialize the environment and agents
-env = rlcard.make('uno')
-# env.reset()
-stt, player_id = env.reset()
 
-# Create the human agent
-human_agent = HumanAgent(env.num_actions)
-trajectories = [[] for _ in range(env.num_players)]
+def initialize_game():
+    # Initialize the environment and agents
+    # env.reset()
+    global stt, player_id, trajectories, human_agent
+    stt, player_id = env.reset()
 
-device = 'cuda' if torch.cuda.is_available() else 'cpu'
+    # Create the human agent
+    human_agent = HumanAgent(env.num_actions)
+    trajectories = [[] for _ in range(env.num_players)]
+
 
 
 # Load the AI agent
