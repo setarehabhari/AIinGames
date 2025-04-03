@@ -45,6 +45,8 @@ def initialize_game():
     # env.reset()
     global stt, player_id, trajectories, human_agent, ai_played_draw
     stt, player_id = env.reset()
+    # the first player is always human
+    player_id = 0
 
     # Create the human agent
     human_agent = HumanAgent(env.num_actions)
