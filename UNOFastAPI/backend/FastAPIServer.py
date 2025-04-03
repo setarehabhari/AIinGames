@@ -1,13 +1,14 @@
+import sys
+import os
+# TODO: #AIINGAMES change based on directory
+sys.path.append(os.path.abspath("C:\\UniCalgary\\AI-In-Games\\UNO-Game\\AIinGames\\UNOFastAPI"))
+
 from fastapi import FastAPI
 # from pydantic import BaseModel
 from AIBackend import *
 
 # Initialize FastAPI app
 app = FastAPI()
-import sys
-import os
-# TODO: #AIINGAMES change based on directory
-sys.path.append(os.path.abspath("C:\\UniCalgary\\AI-In-Games\\UNO-Game\\AIinGames\\UNOFastAPI"))
 
 @app.get("/start_game")
 def start_game():
@@ -18,7 +19,9 @@ def start_game():
     set_agents(ai_agent)
 
 
-
+@app.get("/draw_card")
+def draw_card():
+    return draw_card()
 
 @app.get("/get_human_game_state")
 def get_human_game_state_endpoint():
@@ -27,6 +30,12 @@ def get_human_game_state_endpoint():
     """
     return get_game_state()
 
+@app.get("/get_ai_game_state")
+def get_ai_game_state_endpoint():
+    """
+    Returns the current state of the game for player 0.
+    """
+    return get_game_state(1)
 
 
 @app.post("/play_card")
@@ -37,8 +46,6 @@ async def play_card(card: str):
     # result = player_move(card_move)
     state_game = run(card)
     return state_game
-
-
 
 @app.get("/suggestion")
 async def suggest():
@@ -55,12 +62,12 @@ def get_draw_card_endpoint():
     """
     return "r-3"
 
-@app.get("/get_ai_move")
-def get_ai_move_endpoint():
-    """
-    Returns the current state of the game for player 0.
-    """
-    return "draw"
+# @app.get("/get_ai_move")
+# def get_ai_move_endpoint():
+#     """
+#     Returns the current state of the game for player 0.
+#     """
+#     return "draw"
 
 
 if __name__ == "__main__":

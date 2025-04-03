@@ -55,6 +55,10 @@ class UnoGame:
         state = self.get_state(player_id)
         return state, player_id
 
+    def returDrawnCardsFromGame(self):
+        return self.dealer.returDrawnCardsFromDealer()
+
+
     def step(self, action):
         ''' Get the next state
 

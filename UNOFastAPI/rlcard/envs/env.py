@@ -82,8 +82,12 @@ class Env(object):
         # Record the action for human interface
         self.action_recorder.append((self.get_player_id(), action))
         next_state, player_id = self.game.step(action)
+        # self.game.
 
         return self._extract_state(next_state), player_id
+
+    def returDrawnCardsFromEnv(self):
+        return self.game.returDrawnCardsFromGame()
 
     def step_back(self):
         ''' Take one step backward.

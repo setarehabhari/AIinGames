@@ -11,7 +11,7 @@ class UnoDealer:
         self.shuffle()
         self.cardDrawn = []
 
-    def returDrawnCards(self):
+    def returDrawnCardsFromDealer(self):
         result = self.cardDrawn
         self.cardDrawn = []
         return result
