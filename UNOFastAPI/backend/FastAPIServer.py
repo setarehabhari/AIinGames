@@ -54,13 +54,13 @@ async def suggest():
     """
     # result = player_move(card_move)
     return suggestion()
-
-@app.get("/draw_card")
-def get_draw_card_endpoint():
-    """
-    Returns the current state of the game for player 0.
-    """
-    return "r-3"
+#
+# @app.get("/draw_card")
+# def get_draw_card_endpoint():
+#     """
+#     Returns the current state of the game for player 0.
+#     """
+#     return "r-3"
 
 # @app.get("/get_ai_move")
 # def get_ai_move_endpoint():
