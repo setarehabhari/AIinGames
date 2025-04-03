@@ -167,7 +167,9 @@ class UnoRound:
             #self.winner = UnoJudger.judge_winner(players)
             #return None
 
+        self.dealer.empty_drawn_cards()
         card = self.dealer.deck.pop()
+        self.dealer.add_to_drawn_cards(card)
 
         # draw a wild card
         if card.type == 'wild':

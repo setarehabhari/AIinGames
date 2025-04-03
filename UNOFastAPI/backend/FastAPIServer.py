@@ -21,7 +21,7 @@ def start_game():
 
 @app.get("/draw_card")
 def draw_card():
-    return draw_card()
+    return draw_card_backend()
 
 @app.get("/get_human_game_state")
 def get_human_game_state_endpoint():

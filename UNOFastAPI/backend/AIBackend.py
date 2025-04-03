@@ -51,7 +51,7 @@ def initialize_game():
     trajectories = [[] for _ in range(env.num_players)]
     ai_played_draw = False
 
-def draw_card():
+def draw_card_backend():
     return env.returDrawnCardsFromEnv()
 
 
