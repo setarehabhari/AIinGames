@@ -16,6 +16,7 @@ public class GameState
     public List<int> num_cards;
     public int num_players;
     public int current_player;
+    public bool ai_played_draw;
 }
 
 
@@ -35,7 +36,7 @@ public class Server
         Reverse = 11,
         Draw2 = 12,
         Wild = 13,
-        Draw4Wild = 70
+        Draw4Wild = 68
     }
     public const string CARD_STRING_SKIP = "skip";
     public const string CARD_STRING_REVERSE = "reverse";
@@ -73,13 +74,16 @@ public class Server
     {
         try
         {
-            HttpResponseMessage response = await httpClient.GetAsync($"http://{serverAddress}/get_ai_move");
+            string url = $"http://{serverAddress}/play_card?card=r";
+            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, url);
+
+            HttpResponseMessage response = await httpClient.SendAsync(request);
             response.EnsureSuccessStatusCode();
             return await response.Content.ReadAsStringAsync();
         }
         catch (Exception e)
         {
-            Debug.LogError($"DrawCard request failed: {e.Message}");
+            Debug.LogError($"Play Ai move request failed: {e.Message}");
             return null;
         }
     }

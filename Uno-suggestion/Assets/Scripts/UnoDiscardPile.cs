@@ -27,6 +27,7 @@ public class UnoDiscardPile : MonoBehaviour
     }
     public void DiscardedCard(UnoCard card, Action callback)
     {
+        GameManager.SpecialCardDrawAmount = 0;
         if (card.Type == UnoCard.SpecialCard.Reverse)
         {
             GameManager.NotifiControl.ShowNotification("Reverse!", NotifiControl.NotificationCode.REV);
@@ -38,10 +39,12 @@ public class UnoDiscardPile : MonoBehaviour
         else if (card.Type == UnoCard.SpecialCard.Draw2)
         {
             GameManager.NotifiControl.ShowNotification("draw 2 cards!", NotifiControl.NotificationCode.DRAW2);
+            GameManager.SpecialCardDrawAmount = 1;
         }
         else if (card.Type == UnoCard.SpecialCard.Draw4Wild)
         {
             GameManager.NotifiControl.ShowNotification("draw 4 cards!", NotifiControl.NotificationCode.DRAW4);
+            GameManager.SpecialCardDrawAmount = 3;
         }
         card.ShowBackImg(false);
 
@@ -50,10 +53,14 @@ public class UnoDiscardPile : MonoBehaviour
         });
         LastCard = card;
     }
-    public bool CanPlayOnUpCard()
+    public bool CanPlayOnUpCard() // This says you can never play on top of +2 or +4
     {
         return LastCard.AccumulatedCards <= 0;
-    }    
+    }
+    public int IndexOfDrawnCard() // This says you can never play on top of +2 or +4
+    {
+        return LastCard.AccumulatedCards;
+    }
     public bool CanPlayThisCard(UnoCard cardScript)
     {
         return (LastCard.AcceptsCard(cardScript) || (cardStack.HasOneCard()&&LastCard.Type==UnoCard.SpecialCard.Wild));
@@ -81,8 +88,11 @@ public class UnoDiscardPile : MonoBehaviour
     {
         if (LastCard.AccumulatedCards > 0)
         {
+
             LastCard.AccumulatedCards--;
         }
+        print("New LastCard.AccumulatedCards:");
+        print(LastCard.AccumulatedCards);
     }
     public UnoCard GetLastCard()
     {

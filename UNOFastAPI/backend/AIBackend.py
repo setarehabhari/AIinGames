@@ -64,6 +64,7 @@ def draw_card_backend():
 def load_ai_agent():
     try:
         # TODO: #AIINGAMES change based on directory
+        # r"C:\Users\abhar\extras\UNI\AI-IN-GAMES\AIinGames\UNOFastAPI\backend\model.pth"
         file_path = "C:\\UniCalgary\\AI-In-Games\\UNO-Game\\AIinGames\\UNOFastAPI\\backend\\model.pth"
         # Check if the file exists
         if os.path.exists(file_path):
@@ -125,6 +126,8 @@ def run(action):
             ai_action_string = env.decode_action_api(ai_action)
             if ai_action_string == 'draw':
                 ai_played_draw = True
+            else:
+                ai_played_draw = False
             next_state, next_player_id = env.step(ai_action)  # Apply the AI's action to the environment
             # state = get_game_state()  # Get the new game state
 

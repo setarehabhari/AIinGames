@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using DG.Tweening.Core.Easing;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -49,22 +51,69 @@ public class UnoAI : MonoBehaviour
 
     public void StartPlay( UnoCardStack PlayerCardStack = null, List<UnoCard> DrawStackCards = null,int TryNumber = 0)
     {
-        StartCoroutine(GetAIMoveAsyncAsCoroutine((playedCardString) =>
+        if (!gameManager.DiscardPile.CanPlayOnUpCard())
         {
-            playedCardString = playedCardString.Trim('\"');
-            if (playedCardString != "draw")
+            
+            int indexbegin = gameManager.DiscardPile.IndexOfDrawnCard();
+            for (int j = 0; j < indexbegin; j++)
             {
-                UnoCard card = gameManager.DrawPile.MakeCardFromString(playedCardString);
-                PlayerCardStack.GetAllCards()[0].AddStuffFromActualCard(card);
-                PlayerCardStack.GetAllCards()[0].OnClick((int)Owner);
-                PlayerCardStack.GetAllCards().RemoveAt(0);
-            } else {
-                List<UnoCard> DrawCards = DrawStackCards;
-                DrawCards.Reverse();
-                DrawCards[0].OnClick((int)Owner);
-                DrawCards.RemoveAt(0);
+                print(indexbegin);
+                print("j");
+                print(j);
+                //List<UnoCard> DrawCards = DrawStackCards;
+                //DrawCards.Reverse();
+                //DrawCards[0].OnClick((int)Owner);
+                //DrawCards.RemoveAt(0);
+
+                int id = gameManager.DrawPile.GetAllCards().Count - 1;
+                UnoCard physicalCard = gameManager.DrawPile.GetAllCards()[id];
+                physicalCard.transform.localScale = Vector3.one;
+
+                //int CurrentID = j;
+                //UnoCard card = MakeCardFromString(GameManager.CurrentGameState.hand[j]);
+                //physicalCard.AddStuffFromActualCard(card);
+                gameManager.DrawPile.RemoveFromDraw(physicalCard);
+                //gameManager.DiscardPile.CardDrawn();
+
+                gameManager.GetPlayer((Owner)1).DrawCard(physicalCard, false, true, () =>
+                {//TODO:null exception when play again online game
+                    physicalCard.ShowBackImg(true);
+                }, true);
+                //yield return new WaitForSeconds(UnoGameManager.WaitForOneMoveDuration * 3 / 4);
             }
-        }));
+            gameManager.ChangeTurn();
+            print(gameManager.DiscardPile.IndexOfDrawnCard());
+        }
+        else
+        {
+            StartCoroutine(GetAIMoveAsyncAsCoroutine((rawJson) =>
+            {
+                //print(rawJson);
+                GameState CurrentGameState = JsonUtility.FromJson<GameState>(rawJson);
+                //print(CurrentGameState.played_cards.Last());
+                //print(CurrentGameState.played_cards);
+                //print(CurrentGameState.ai_played_draw);
+                //print(CurrentGameState.ai_played_draw == true);
+                String playedCardString = CurrentGameState.played_cards.Last();
+                playedCardString = playedCardString.Trim('\"');
+                if (CurrentGameState.ai_played_draw == false)
+                {
+                    //print("fere");
+                    UnoCard card = gameManager.DrawPile.MakeCardFromString(playedCardString);
+                    PlayerCardStack.GetAllCards()[0].AddStuffFromActualCard(card);
+                    PlayerCardStack.GetAllCards()[0].OnClick((int)Owner);
+                    PlayerCardStack.GetAllCards().RemoveAt(0);
+                }
+                else
+                {
+                    List<UnoCard> DrawCards = DrawStackCards;
+                    DrawCards.Reverse();
+                    DrawCards[0].OnClick((int)Owner);
+                    DrawCards.RemoveAt(0);
+                }
+            }));
+
+        }
         int x = Random.Range(0, 10);
         if(x<2)
             StartCoroutine(CheckForUno());

@@ -55,36 +55,58 @@ public class UnoDrawPile : MonoBehaviour
     /// <param name="owner"></param>
     private void OnCardSelected(UnoCard cardScript)
     {
-       
+        //print("finish game?");
+        //print(GameManager.isGameLocked());
+        //print(GameManager.GetTurn());
+        //print((int)cardScript.LastClicked);
          if ( GameManager.isGameLocked() || GameManager.GetTurn() != (int)cardScript.LastClicked){//if its not the turn of the player clicked on this card,
             return;}
+         //if (GameManager.DiscardPile.GetLastCard().Type == UnoCard.SpecialCard.Draw2 ||
+         //   GameManager.DiscardPile.GetLastCard().Type == UnoCard.SpecialCard.Draw4Wild)
+         //{
+         //   print("yay -_-");
+         //   return;
+         //}
          GameManager.LockGame(true);
-        DebugControl.LogTesting("drawing"+GameManager.isGameLocked()+" "+ GameManager.GetTurn());
-         GameManager.GetPlayer((Owner)GameManager.GetTurn()).DrawCard(cardScript, false, false, () =>
-         {
-            if (DrawStack.IsEmpty())
-            {
-                GameManager.EmptyDrawPileShowWinner();
-            }
-            else
-            {
-                GameManager.DiscardPile.CardDrawn();
+         DebugControl.LogTesting("drawing"+GameManager.isGameLocked()+" "+ GameManager.GetTurn());
 
-                if (GameManager.OnlineGame && (Owner)UnoGameManager.MainPlayer == cardScript.LastClicked)
-                {
-                    GameManager.EventSender.Online_OnDrawCardSelected(cardScript);
-                }
+        if (GameManager.GetTurn() == (int)Owner.Player1 && GameManager.DiscardPile.IndexOfDrawnCard() == 0)
+        {
+            StartCoroutine(GameManager.GetPlayer((Owner)GameManager.GetTurn()).PlayCardAsyncAsCoroutine("draw"));
+        }
+        //for (int i = 0; i <= GameManager.SpecialCardDrawAmount; i++) 
+        //{// TODO this is the problem
+            print(GameManager.DiscardPile.IndexOfDrawnCard());
+            GameManager.GetPlayer((Owner)GameManager.GetTurn()).DrawCard(cardScript, false, false, () =>
+            {
+                //if (i == GameManager.SpecialCardDrawAmount)
+                //{
+                    if (DrawStack.IsEmpty())
+                    {
+                        GameManager.EmptyDrawPileShowWinner();
+                    }
+                    else
+                    {
+                        GameManager.DiscardPile.CardDrawn();
 
-                if (GameManager.DiscardPile.CanPlayOnUpCard())
-                {
-                    GameManager.ChangeTurn();
-                }
-                else
-                {
-                    GameManager.GetPlayer((Owner)GameManager.GetTurn()).PlayAgain();
-                }
-            }
-        });
+                        if (GameManager.OnlineGame && (Owner)UnoGameManager.MainPlayer == cardScript.LastClicked)
+                        {
+                            GameManager.EventSender.Online_OnDrawCardSelected(cardScript);
+                        }
+
+                        if (GameManager.DiscardPile.CanPlayOnUpCard())
+                        {
+                            print("whyyyy");
+                            GameManager.ChangeTurn();
+                        }
+                        else
+                        {
+                            GameManager.GetPlayer((Owner)GameManager.GetTurn()).PlayAgain();
+                        }
+                    }
+                //}
+            });
+        //}
     }
     public void ShuffleAndDistAllCards()
     {
@@ -183,6 +205,12 @@ public class UnoDrawPile : MonoBehaviour
         UnoCard cardScript = card.GetComponent<UnoCard>();
         int id = ConvertStringIdToIntId(cardstring);
         cardScript.InitCard(id, CardSprites[id], cardstring);
+        //print()
+        if (cardScript.IsWildCard())
+        {
+            //print("HEre");
+            cardScript.SetWildCardColor();
+        }
         return cardScript;
     }
 

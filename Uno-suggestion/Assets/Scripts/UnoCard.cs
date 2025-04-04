@@ -71,7 +71,7 @@ public class UnoCard : MonoBehaviour
     private void Update()
     {
         if (!IsAnimating) return; // Stop if animation is off
-        print("we are here");
+        //print("we are here");
         // Determine target based on current scaling direction
         Vector3 target = scalingUp ? targetScale : initialScale;
 
@@ -98,18 +98,41 @@ public class UnoCard : MonoBehaviour
         ShowBackImg(true);
         SetNumberAndColor();
         
-        TurnChangeAmount =  Type == SpecialCard.Skip? 2: Type == SpecialCard.Reverse ? -1:1;
+        TurnChangeAmount = Type == SpecialCard.Skip? 2: Type == SpecialCard.Reverse ? -1:1;
         AccumulatedCards = Type == SpecialCard.Draw2 ? 2 : Type == SpecialCard.Draw4Wild ? 4 : 0;
 
     }
 
     public bool IsWildCard()
     {
-        if (this.Type == SpecialCard.Wild || this.Type == SpecialCard.Wild){
+        if (this.Type == SpecialCard.Wild || this.Type == SpecialCard.Draw4Wild){
             return true;
         }
         return false;
     }
+
+    public void SetWildCardColor()
+    {
+        string[] parts = this.stringId.Split('-');
+        print(parts[0]);
+        if (parts[0] == "r")
+        {
+            this.Color = CardType.Red;
+        }
+        else if (parts[0] == "g")
+        {
+            this.Color = CardType.Green;
+        }
+        else if (parts[0] == "b")
+        {
+            this.Color = CardType.Blue;
+        }
+        else
+        {
+            this.Color = CardType.Yellow;
+        }
+    }
+
     public void AddStuffFromActualCard(UnoCard actualCard)
     {
         this.id = actualCard.id;
@@ -130,6 +153,7 @@ public class UnoCard : MonoBehaviour
             LastClicked = (Owner)UnoGameManager.MainPlayer;//Owner.Player1;//TODO:multiplayer
         else
             LastClicked = (Owner)Player;
+        print("are we plzzz");
         OnSelected?.Invoke(this);
     }
     public void ShowBackImg(bool back)
@@ -191,7 +215,12 @@ public class UnoCard : MonoBehaviour
 
     public bool AcceptsCard(UnoCard card)
     {
-        //DebugControl.Log(Type + " " + card.Type, 3);
+        //DebugControl.Log(Type + " " + card.Type);
+        print("UMMMM");
+        print(Number);
+        print(Color);
+        print(card.Number);
+        print(card.Color);
         if (card.Type == SpecialCard.Wild|| card.Type == SpecialCard.Draw4Wild)
             return true;
 

@@ -1,7 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using DG.Tweening.Core.Easing;
+using Photon.Realtime;
+using Unity.Plastic.Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.UI;
 using static UnoCard;
@@ -80,13 +84,18 @@ public class UnoPlayer : MonoBehaviour
     {
         handOwner = _owner; //stacks without player have assigned owners from editor.
     }
-    public void DrawCard(UnoCard card,bool isForUno, bool isForInit, Action callback)
+    public void DrawCard(UnoCard card,bool isForUno, bool isForInit, Action callback, bool isForAI=false)
     {
         GameManager.DrawPile.RemoveFromDraw(card);
         if(!isForUno)
             Immune(false);
         if (isForInit)
         {
+            if (isForAI)
+            {
+                GameManager.DiscardPile.CardDrawn();
+            }
+            //GameDiscardPile.CardDrawn();
             cardStack.PushAndMove(card, false, () =>
             {
                 if ((int)handOwner == UnoGameManager.MainPlayer)//TODO:Online
@@ -98,7 +107,10 @@ public class UnoPlayer : MonoBehaviour
         {
             StartCoroutine(DrawCardAsyncAsCoroutine((drawnCardString) =>
             {
-                UnoCard drawnCard = GameManager.DrawPile.MakeCardFromString(drawnCardString);
+                List<string> listOfDrawnCards = JsonConvert.DeserializeObject<List<string>>(drawnCardString);
+                int index = GameManager.DiscardPile.IndexOfDrawnCard() - 1 < 0 ? 0 : (GameManager.DiscardPile.IndexOfDrawnCard() - 1);
+                UnoCard drawnCard = GameManager.DrawPile.MakeCardFromString(listOfDrawnCards[index]);
+                //GameManager.SpecialCardDrawAmount = GameManager.SpecialCardDrawAmount - 1;
                 card.AddStuffFromActualCard(drawnCard);
 
                 cardStack.PushAndMove(card, false, () =>
@@ -128,15 +140,24 @@ public class UnoPlayer : MonoBehaviour
         {
             StartCoroutine(GetSuggestionAsyncAsCoroutine((suggestionCardString) =>
             {
-                int suggestionId = GameManager.DrawPile.ConvertStringIdToIntId(suggestionCardString);
-                cardStack.GetAllCards().ForEach(card => {
-                    if (card.id == suggestionId) {
-                        //print(card.id);
-                        //chosenCard = card;
-                        card.SuggestionAnimation();
-                        //card.SuggestionAnimation();
-                    }
-                });
+                if (suggestionCardString.Trim('\"') == "draw")
+                {
+                    GameManager.DrawPile.GetAllCards().Last().SuggestionAnimation();
+                }
+                else
+                {
+                    int suggestionId = GameManager.DrawPile.ConvertStringIdToIntId(suggestionCardString);
+                    cardStack.GetAllCards().ForEach(card =>
+                    {
+                        if (card.id == suggestionId)
+                        {
+                            //print(card.id);
+                            //chosenCard = card;
+                            card.SuggestionAnimation();
+                            //card.SuggestionAnimation();
+                        }
+                    });
+                }
             }));
         }
         // DebugControl.Log("turn" + isMyTurn, 3);
@@ -145,6 +166,7 @@ public class UnoPlayer : MonoBehaviour
         {
             if (isMyTurn )
             {
+                print("here");
                  StartCoroutine(AIPlay());
             }
         }
@@ -174,18 +196,16 @@ public class UnoPlayer : MonoBehaviour
         {
             if (AI == null)
             {
-
                 ColorDrawCard = cardScript;
                 SelectColorPanel.SetActive(true);//then ColorSelected function will be called
             }
             else
             {
+                print(cardScript.stringId);
+                print(cardScript.GetColor());
                 yield return new WaitForSeconds(UnoGameManager.WaitForOneMoveDuration);
-
-                GameManager.DiscardPile.SetWildLastCardUIColor(AI.SelectColorForWild(cardStack));
+                GameManager.DiscardPile.SetWildLastCardUIColor(cardScript.GetColor());
                 GameManager.ContinueGame();
-
-
             }
         }
     }
@@ -205,7 +225,7 @@ public class UnoPlayer : MonoBehaviour
         
         
         StringBuilder sb = new StringBuilder(ColorDrawCard.stringId);
-        sb[0] = GetCardFromInt(color);
+        sb[0] = GetColorFromInt(color);
         string CardIdAFterColorpick = sb.ToString();
 
 
@@ -217,7 +237,7 @@ public class UnoPlayer : MonoBehaviour
             GameManager.EventSender.Online_OnWildColorSelected(color);
         }
     }
-    public char GetCardFromInt(int colorId)
+    public char GetColorFromInt(int colorId)
     {
         if (colorId == ((int)CardType.Red))
         {
@@ -239,11 +259,9 @@ public class UnoPlayer : MonoBehaviour
         AI.Owner = handOwner;
         yield return new WaitForSeconds(0.4f*UnoGameManager.WaitForOneMoveDuration);
         AI.StartPlay(cardStack, GameManager.DrawPile.GetAllCards(),TryNumber);
-
-
     }
 
-    private IEnumerator PlayCardAsyncAsCoroutine(string stringId)
+    public IEnumerator PlayCardAsyncAsCoroutine(string stringId)
     {
         var task = GameManager.GameServer.PlayCardAsync(stringId); ;
         yield return new WaitUntil(() => task.IsCompleted);
@@ -256,13 +274,16 @@ public class UnoPlayer : MonoBehaviour
         }
         if (GameManager.GetTurn() == (int)handOwner && GameManager.GetTurn() == (int)card.LastClicked)
         {
+            //print("game edn");
+            //print(GameManager.DiscardPile.CanPlayOnUpCard());
+            //print(GameManager.DiscardPile.CanPlayThisCard(card));
             if (GameManager.DiscardPile.CanPlayOnUpCard() && GameManager.DiscardPile.CanPlayThisCard(card))
             {
                 GameManager.LockGame(true);
                 card.StopAnimation();
                 RemoveFromHand(card);//TODO: move in discard in pile code
                 Immune(false);
-                if (!card.IsWildCard() && card.stringId is not null)
+                if (!card.IsWildCard() && card.stringId is not null && GameManager.GetTurn() == (int)Owner.Player1)
                 {
                     StartCoroutine(PlayCardAsyncAsCoroutine(card.stringId));
                 }
