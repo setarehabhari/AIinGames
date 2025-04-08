@@ -92,8 +92,8 @@ public class UnoAI : MonoBehaviour
                 GameState CurrentGameState = JsonUtility.FromJson<GameState>(rawJson);
                 //print(CurrentGameState.played_cards.Last());
                 //print(CurrentGameState.played_cards);
-                //print(CurrentGameState.ai_played_draw);
-                //print(CurrentGameState.ai_played_draw == true);
+                print(CurrentGameState.ai_played_draw);
+                print(CurrentGameState.ai_played_draw == true);
                 String playedCardString = CurrentGameState.played_cards.Last();
                 playedCardString = playedCardString.Trim('\"');
                 if (CurrentGameState.ai_played_draw == false)

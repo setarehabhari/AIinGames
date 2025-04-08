@@ -209,7 +209,7 @@ public class UnoGameManager : MonoBehaviourPunCallbacks
     public void ChangeTurn(UnoCard card = null)
     {
         LockGame(false);
-        print("are we even here?");
+        //print("are we even here?");
         if (card != null)//-1+1=0   -1+-1=-2   0+-1=--1  1-1=0 
         {
             if (!(PlayerCount == 2 && card.Type == UnoCard.SpecialCard.Reverse))//else everything stays the same
@@ -237,8 +237,8 @@ public class UnoGameManager : MonoBehaviourPunCallbacks
         {
             Players[i].ChangeTurnToMe(Turn == (int)Players[i].handOwner);//TODO:off i
             
-            print(Turn);
-            print((int)Players[i].handOwner);
+            //print(Turn);
+            //print((int)Players[i].handOwner);
             if (Turn != (int)Players[i].handOwner)
             {
                 Players[i].cardStack.GetAllCards().ForEach(card =>

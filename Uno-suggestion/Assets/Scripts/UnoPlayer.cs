@@ -166,7 +166,7 @@ public class UnoPlayer : MonoBehaviour
         {
             if (isMyTurn )
             {
-                print("here");
+                //print("here");
                  StartCoroutine(AIPlay());
             }
         }
@@ -201,8 +201,8 @@ public class UnoPlayer : MonoBehaviour
             }
             else
             {
-                print(cardScript.stringId);
-                print(cardScript.GetColor());
+                //print(cardScript.stringId);
+                //print(cardScript.GetColor());
                 yield return new WaitForSeconds(UnoGameManager.WaitForOneMoveDuration);
                 GameManager.DiscardPile.SetWildLastCardUIColor(cardScript.GetColor());
                 GameManager.ContinueGame();

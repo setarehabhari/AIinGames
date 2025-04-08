@@ -114,7 +114,7 @@ public class UnoCard : MonoBehaviour
     public void SetWildCardColor()
     {
         string[] parts = this.stringId.Split('-');
-        print(parts[0]);
+        //print(parts[0]);
         if (parts[0] == "r")
         {
             this.Color = CardType.Red;
@@ -153,7 +153,7 @@ public class UnoCard : MonoBehaviour
             LastClicked = (Owner)UnoGameManager.MainPlayer;//Owner.Player1;//TODO:multiplayer
         else
             LastClicked = (Owner)Player;
-        print("are we plzzz");
+        //print("are we plzzz");
         OnSelected?.Invoke(this);
     }
     public void ShowBackImg(bool back)

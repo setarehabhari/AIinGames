@@ -76,7 +76,8 @@ public class UnoDrawPile : MonoBehaviour
         }
         //for (int i = 0; i <= GameManager.SpecialCardDrawAmount; i++) 
         //{// TODO this is the problem
-            print(GameManager.DiscardPile.IndexOfDrawnCard());
+        print("IndexOfDrawnCard");
+        print(GameManager.DiscardPile.IndexOfDrawnCard());
             GameManager.GetPlayer((Owner)GameManager.GetTurn()).DrawCard(cardScript, false, false, () =>
             {
                 //if (i == GameManager.SpecialCardDrawAmount)

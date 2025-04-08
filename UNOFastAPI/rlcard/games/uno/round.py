@@ -171,27 +171,28 @@ class UnoRound:
         card = self.dealer.deck.pop()
         self.dealer.add_to_drawn_cards(card)
 
+        # Remove functionality to play drawn card
         # draw a wild card
-        if card.type == 'wild':
-            card.color = self.np_random.choice(UnoCard.info['color'])
-            self.target = card
-            self.played_cards.append(card)
-            self.current_player = (self.current_player + self.direction) % self.num_players
-
-        # draw a card with the same color of target
-        elif card.color == self.target.color:
-            if card.type == 'number':
-                self.target = card
-                self.played_cards.append(card)
-                self.current_player = (self.current_player + self.direction) % self.num_players
-            else:
-                self.played_cards.append(card)
-                self._preform_non_number_action(players, card)
+        # if card.type == 'wild':
+        #     card.color = self.np_random.choice(UnoCard.info['color'])
+        #     self.target = card
+        #     self.played_cards.append(card)
+        #     self.current_player = (self.current_player + self.direction) % self.num_players
+        #
+        # # draw a card with the same color of target
+        # elif card.color == self.target.color:
+        #     if card.type == 'number':
+        #         self.target = card
+        #         self.played_cards.append(card)
+        #         self.current_player = (self.current_player + self.direction) % self.num_players
+        #     else:
+        #         self.played_cards.append(card)
+        #         self._preform_non_number_action(players, card)
 
         # draw a card with the diffrent color of target
-        else:
-            players[self.current_player].hand.append(card)
-            self.current_player = (self.current_player + self.direction) % self.num_players
+        # else:
+        players[self.current_player].hand.append(card)
+        self.current_player = (self.current_player + self.direction) % self.num_players
 
     def _preform_non_number_action(self, players, card):
         current = self.current_player

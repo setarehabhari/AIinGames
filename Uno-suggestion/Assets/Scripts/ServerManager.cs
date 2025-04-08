@@ -98,7 +98,7 @@ public class Server
         }
         catch (Exception e)
         {
-            Debug.LogError($"DrawCard request failed: {e.Message}");
+            Debug.LogError($"Get suggestion request failed: {e.Message}");
             return null;
         }
     }
