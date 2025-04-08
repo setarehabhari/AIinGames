@@ -51,7 +51,7 @@ def initialize_game():
         played_cards = env.get_state(player_id)['raw_obs'].get("played_cards", [])
 
         if played_cards and ("draw" in played_cards[-1] or "wild" in played_cards[-1] or
-                             "skip" in played_cards[-1]):
+                             "skip" in played_cards[-1] or "reverse" in played_cards[-1]):
             # A "draw" card was played — reset again
             continue
         else:
@@ -98,7 +98,7 @@ def load_ai_agent():
     try:
         # TODO: #AIINGAMES change based on directory
         # r"C:\Users\abhar\extras\UNI\AI-IN-GAMES\AIinGames\UNOFastAPI\backend\model.pth"
-        file_path = r"C:\Users\abhar\extras\UNI\AI-IN-GAMES\AIinGames\UNOFastAPI\backend\model.pth"
+        file_path = "C:\\UniCalgary\\AI-In-Games\\UNO-Game\\AIinGames\\UNOFastAPI\\backend\\model.pth"
         # Check if the file exists
         if os.path.exists(file_path):
             print("The file exists.")
