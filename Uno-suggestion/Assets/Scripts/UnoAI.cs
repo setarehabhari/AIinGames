@@ -114,9 +114,9 @@ public class UnoAI : MonoBehaviour
             }));
 
         }
-        int x = Random.Range(0, 10);
-        if(x<2)
-            StartCoroutine(CheckForUno());
+        //int x = Random.Range(0, 10);
+        //if(x<2)
+        //    StartCoroutine(CheckForUno());
     }
     public UnoCard.CardType SelectColorForWild(UnoCardStack PlayerCardStack)
     {
