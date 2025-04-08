@@ -44,18 +44,51 @@ def initialize_game():
     # Initialize the environment and agents
     # env.reset()
     global stt, player_id, trajectories, human_agent, ai_played_draw
-    stt, player_id = env.reset()
+    # stt, player_id = env.reset()
+    # last_played = stt.get("played_cards", [])[0] if stt.get("played_cards") else None
+    while True:
+        stt, player_id = env.reset()
+        played_cards = env.get_state(player_id)['raw_obs'].get("played_cards", [])
+
+        if played_cards and ("draw" in played_cards[-1] or "wild" in played_cards[-1] or
+                             "skip" in played_cards[-1]):
+            # A "draw" card was played — reset again
+            continue
+        else:
+            # No "draw" card — break the loop and proceed
+            break
+    # while True:
+    #     # stt, player_id = env.reset()
+    #
+    #     # Example: assuming `state` is your dictionary like the one you posted
+    #     last_played = get_game_state(0)
+    #     # last_played = get_game_state(0)
+    #     # print(last_played)
+    #     if last_played and is_draw_card_at_first(last_played):
+    #         continue  # restart loop, i.e., reset again
+    #     else:
+    #         break  # exit the loop, valid star
+    # while not is_draw_card_at_first():
+    #     stt, player_id = env.reset()
+
     # the first player is always human
-    player_id = 0
+    # player_id = 0
 
     # Create the human agent
     human_agent = HumanAgent(env.num_actions)
     trajectories = [[] for _ in range(env.num_players)]
     ai_played_draw = False
 
+
+    # print(get_game_state(0))
+
+
 def draw_card_backend():
     return env.returDrawnCardsFromEnv()
 
+
+def is_draw_card_at_first(card):
+    return "draw" in card
 
 
 
@@ -111,6 +144,9 @@ def get_game_state(player_id=0):
 def run(action):
     # player_id = state['current_player']
     global trajectories, player_id, trajectories, ai_played_draw
+    # if "draw" in action:
+
+
 
     state = get_game_state(player_id)
 
