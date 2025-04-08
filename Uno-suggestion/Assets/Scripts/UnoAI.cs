@@ -57,9 +57,9 @@ public class UnoAI : MonoBehaviour
             int indexbegin = gameManager.DiscardPile.IndexOfDrawnCard();
             for (int j = 0; j < indexbegin; j++)
             {
-                print(indexbegin);
-                print("j");
-                print(j);
+                //print(indexbegin);
+                //print("j");
+                //print(j);
                 //List<UnoCard> DrawCards = DrawStackCards;
                 //DrawCards.Reverse();
                 //DrawCards[0].OnClick((int)Owner);
@@ -82,7 +82,7 @@ public class UnoAI : MonoBehaviour
                 //yield return new WaitForSeconds(UnoGameManager.WaitForOneMoveDuration * 3 / 4);
             }
             gameManager.ChangeTurn();
-            print(gameManager.DiscardPile.IndexOfDrawnCard());
+            //print(gameManager.DiscardPile.IndexOfDrawnCard());
         }
         else
         {
@@ -92,8 +92,8 @@ public class UnoAI : MonoBehaviour
                 GameState CurrentGameState = JsonUtility.FromJson<GameState>(rawJson);
                 //print(CurrentGameState.played_cards.Last());
                 //print(CurrentGameState.played_cards);
-                print(CurrentGameState.ai_played_draw);
-                print(CurrentGameState.ai_played_draw == true);
+                //print(CurrentGameState.ai_played_draw);
+                //print(CurrentGameState.ai_played_draw == true);
                 String playedCardString = CurrentGameState.played_cards.Last();
                 playedCardString = playedCardString.Trim('\"');
                 if (CurrentGameState.ai_played_draw == false)

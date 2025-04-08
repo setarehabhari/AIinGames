@@ -136,7 +136,7 @@ public class UnoPlayer : MonoBehaviour
     {
         MyTurnImage.SetActive(isMyTurn);
         TryNumber = 0;
-        if(isMyTurn && handOwner == Owner.Player1)
+        if(isMyTurn && handOwner == Owner.Player1 && GameManager.DiscardPile.CanPlayOnUpCard())
         {
             StartCoroutine(GetSuggestionAsyncAsCoroutine((suggestionCardString) =>
             {
