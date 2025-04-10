@@ -191,18 +191,24 @@ def run_train_with_params(param_sets):
 #     # Add more parameter sets as needed
 # ]
 
-#epsilon_start_values = [0.5, 0.7, 1.0]
-epsilon_end_values = [0.05, 0.1, 0.2, 0.3, 0.5]
+# grid search
+epsilon_start_values = [0.5, 0.7, 1.0]
+epsilon_end_values = [0.05, 0.1, 0.2]
+discount_factor_values = [0.95, 0.98, 0.99, 1.0]
+epsilon_decay_steps_values = [10000, 20000, 50000]
 
+# Generate all combinations of parameter values for grid search
 param_sets = []
-# for val in epsilon_start_values:
-#     param = ARGS.copy()
-#     param["epsilon_start"] = val
-#     param_sets.append(param)
+for epsilon_start in epsilon_start_values:
+    for epsilon_end in epsilon_end_values:
+        for discount_factor in discount_factor_values:
+            for epsilon_decay_steps in epsilon_decay_steps_values:
+                param = ARGS.copy()
+                param["epsilon_start"] = epsilon_start
+                param["epsilon_end"] = epsilon_end
+                param["discount_factor"] = discount_factor
+                param["epsilon_decay_steps"] = epsilon_decay_steps
+                param_sets.append(param)
 
-for val in epsilon_end_values:
-    param = ARGS.copy()
-    param["epsilon_end"] = val
-    param_sets.append(param)
 
 run_train_with_params(param_sets)
