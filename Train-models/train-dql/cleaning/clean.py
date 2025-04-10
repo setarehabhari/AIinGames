@@ -35,7 +35,7 @@ def save_session_info(sessions_info):
     print("Saved session information.")
 
 # Simulating reading the log file line by line
-with open('../3-31-H19-M37.log', 'r', encoding='utf-16') as file:
+with open('./4-9-21h41m.log', 'r', encoding='utf-16') as file:
     for line in file:
         # Detect the start of a parameter block
         if param_pattern.search(line):

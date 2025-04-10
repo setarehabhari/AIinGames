@@ -12,6 +12,7 @@ from rlcard.utils import (
     reorganize,
     Logger,
     plot_curve,
+    rl_plot_curve,
 )
 
 # ==== Fixed Parameters ====
@@ -19,9 +20,9 @@ CONFIG = {
     "env": "uno",  # Change to "uno" or any other game
     "algorithm": "dqn",
     "seed": 42,
-    "num_episodes": 100,
-    "num_eval_games": 50,
-    "evaluate_every": 20,
+    "num_episodes": 20,
+    "num_eval_games": 10,
+    "evaluate_every": 10,
     "log_dir": "experiments/uno_dqn_result/",
 }
 
@@ -63,9 +64,9 @@ ARGS = {
     "num_actions":2,
     "state_shape":None,
     "train_every":1,
-    "mlp_layers":None,
+    "mlp_layers": [64,64],
     "learning_rate":0.00005,
-    "device":None,
+    "device": None,
     "save_path":None,
     "save_every":float('inf'),
 }
@@ -144,11 +145,15 @@ def train(ARGS, run_id):
                     )[0]
                 )
 
+            logger.log_rlloss(agent.total_t, agent.rlloss)
+
         # Get the paths
         csv_path, fig_path = logger.csv_path, logger.fig_path
+        rl_csv_path, rl_fig_path = logger.rl_csv_path, logger.rl_fig
 
     # Plot the learning curve
-    #plot_curve(csv_path, fig_path, CONFIG["algorithm"])
+    plot_curve(csv_path, fig_path, CONFIG["algorithm"])
+    rl_plot_curve(rl_csv_path, rl_fig_path, CONFIG["algorithm"])
 
     # Save model
     save_path = os.path.join(run_log_dir, 'model.pth')
@@ -162,37 +167,32 @@ def run_train_with_params(param_sets):
         # Pass the parameter set to train function with a unique run_id
         train(params, run_id=idx)
 
-# Example of different parameter sets to test
-param_sets = [
-    {
-        "replay_memory_size": 30000,
-        "replay_memory_init_size": 1000,
-        "update_target_estimator_every": 2000,
-        "discount_factor": 0.99,
-        "epsilon_start": 1.0,
-        "epsilon_end": 0.1,
-        "epsilon_decay_steps": 25000,
-        "batch_size": 32,
-        "mlp_layers": [64, 64],
-        "learning_rate": 0.0001,
-        "device": None,
-        "save_every": 5000,
-    },
-    {
-        "replay_memory_size": 50000,
-        "replay_memory_init_size": 2000,
-        "update_target_estimator_every": 500,
-        "discount_factor": 0.95,
-        "epsilon_start": 1.0,
-        "epsilon_end": 0.05,
-        "epsilon_decay_steps": 30000,
-        "batch_size": 64,
-        "mlp_layers": [128, 128],
-        "learning_rate": 0.00001,
-        "device": None,
-        "save_every": 10000,
-    },
-    # Add more parameter sets as needed
-]
 
-#run_train_with_params(param_sets)
+# Example of different parameter sets to test
+# param_sets = [
+#     { # this is the default set
+#         "replay_memory_size": 20000,
+#         "replay_memory_init_size": 100,
+#         "update_target_estimator_every": 1000,
+#         "discount_factor": 0.99,
+#         "epsilon_start": 1.0,
+#         "epsilon_end": 0.1,
+#         "epsilon_decay_steps": 20000,
+#         "batch_size": 32,
+#         "mlp_layers": None,
+#         "learning_rate": 0.00005,
+#         "device": None,
+#         "save_every": float('inf'),
+#     },
+#     # Add more parameter sets as needed
+# ]
+
+epsilon_start_values = [0.1, 0.2, 0.5, 0.7, 1.0]
+
+param_sets = []
+for val in epsilon_start_values:
+    param = ARGS.copy()
+    param["epsilon_start"] = val
+    param_sets.append(param)
+
+run_train_with_params(param_sets)
