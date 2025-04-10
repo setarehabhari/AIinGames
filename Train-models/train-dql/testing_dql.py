@@ -20,9 +20,9 @@ CONFIG = {
     "env": "uno",  # Change to "uno" or any other game
     "algorithm": "dqn",
     "seed": 42,
-    "num_episodes": 20,
-    "num_eval_games": 10,
-    "evaluate_every": 10,
+    "num_episodes": 1000,
+    "num_eval_games": 100,
+    "evaluate_every": 100,
     "log_dir": "experiments/uno_dqn_result/",
 }
 
@@ -110,8 +110,11 @@ def train(ARGS, run_id):
     run_log_dir = os.path.join(CONFIG["log_dir"], f'run_{run_id}')
     os.makedirs(run_log_dir, exist_ok=True)
 
+
+    runName = "epsilon_end_" + str(run_id) 
+
     # Start training
-    with Logger(run_log_dir) as logger:
+    with Logger(run_log_dir, runName) as logger:
         logger.log("=========CONFIG=========")
         for key, value in CONFIG.items():
             text = f"{key}: {value}"
@@ -134,6 +137,7 @@ def train(ARGS, run_id):
             # and the other players play randomly (if any)
             for ts in trajectories[0]:
                 agent.feed(ts)
+                #logger.log_rlloss(agent.total_t, agent.rlloss, episode) # this is to log every step of every episode
 
             # Evaluate the performance. Play with random agents.
             if episode % CONFIG["evaluate_every"] == 0:
@@ -144,8 +148,8 @@ def train(ARGS, run_id):
                         CONFIG["num_eval_games"],
                     )[0]
                 )
+                logger.log_rlloss(agent.total_t, agent.rlloss, episode)
 
-            logger.log_rlloss(agent.total_t, agent.rlloss)
 
         # Get the paths
         csv_path, fig_path = logger.csv_path, logger.fig_path
@@ -187,12 +191,18 @@ def run_train_with_params(param_sets):
 #     # Add more parameter sets as needed
 # ]
 
-epsilon_start_values = [0.1, 0.2, 0.5, 0.7, 1.0]
+#epsilon_start_values = [0.5, 0.7, 1.0]
+epsilon_end_values = [0.05, 0.1, 0.2, 0.3, 0.5]
 
 param_sets = []
-for val in epsilon_start_values:
+# for val in epsilon_start_values:
+#     param = ARGS.copy()
+#     param["epsilon_start"] = val
+#     param_sets.append(param)
+
+for val in epsilon_end_values:
     param = ARGS.copy()
-    param["epsilon_start"] = val
+    param["epsilon_end"] = val
     param_sets.append(param)
 
 run_train_with_params(param_sets)
