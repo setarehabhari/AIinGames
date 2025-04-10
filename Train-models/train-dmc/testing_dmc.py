@@ -10,6 +10,28 @@ CONFIG = {
 }
 
 # ==== Default Args as Namespace ====
+# args = argparse.Namespace(
+#     is_pettingzoo_env=False,
+#     load_model=False,
+#     xpid='dmc',
+#     save_interval=30,
+#     num_actor_devices=1,
+#     num_actors=5,
+#     training_device='',  # CUDA device ID or "cpu"
+#     savedir='experiments/uno_dmc_result/',
+#     total_frames=1_000_000,
+#     exp_epsilon=0.01,
+#     batch_size=32,
+#     unroll_length=100,
+#     num_buffers=50,
+#     num_threads=4,
+#     max_grad_norm=40,
+#     learning_rate=0.0001,
+#     alpha=0.99,
+#     momentum=0,
+#     epsilon=0.00001,
+# )
+
 args = argparse.Namespace(
     is_pettingzoo_env=False,
     load_model=False,
@@ -19,12 +41,12 @@ args = argparse.Namespace(
     num_actors=5,
     training_device='',  # CUDA device ID or "cpu"
     savedir='experiments/uno_dmc_result/',
-    total_frames=1_000_000,
+    total_frames=100000,
     exp_epsilon=0.01,
-    batch_size=32,
-    unroll_length=100,
-    num_buffers=50,
-    num_threads=4,
+    batch_size=8,
+    unroll_length=25,
+    num_buffers=10,
+    num_threads=2,
     max_grad_norm=40,
     learning_rate=0.0001,
     alpha=0.99,
