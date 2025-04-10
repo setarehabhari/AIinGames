@@ -20,7 +20,7 @@ CONFIG = {
     "env": "uno",  # Change to "uno" or any other game
     "algorithm": "dqn",
     "seed": 42,
-    "num_episodes": 1000,
+    "num_episodes": 10000,
     "num_eval_games": 100,
     "evaluate_every": 100,
     "log_dir": "experiments/uno_dqn_result/",
@@ -66,7 +66,7 @@ ARGS = {
     "train_every":1,
     "mlp_layers": [64,64],
     "learning_rate":0.00005,
-    "device": None,
+    "device": "cpu",
     "save_path":None,
     "save_every":float('inf'),
 }
@@ -93,7 +93,7 @@ def train(ARGS, run_id):
         num_actions=env.num_actions,
         state_shape=env.state_shape[0],
         mlp_layers=ARGS["mlp_layers"],
-        device=device,
+        device=ARGS["device"],
         epsilon_start=ARGS["epsilon_start"],
         epsilon_end=ARGS["epsilon_end"],
         batch_size=ARGS["batch_size"],
@@ -111,7 +111,7 @@ def train(ARGS, run_id):
     os.makedirs(run_log_dir, exist_ok=True)
 
 
-    runName = "epsilon_end_" + str(run_id) 
+    runName = "grid_search_" + str(run_id) 
 
     # Start training
     with Logger(run_log_dir, runName) as logger:
@@ -137,7 +137,8 @@ def train(ARGS, run_id):
             # and the other players play randomly (if any)
             for ts in trajectories[0]:
                 agent.feed(ts)
-                #logger.log_rlloss(agent.total_t, agent.rlloss, episode) # this is to log every step of every episode
+                # this is to log every step of every episode
+                logger.log_rlloss(agent.total_t, agent.rlloss, episode) 
 
             # Evaluate the performance. Play with random agents.
             if episode % CONFIG["evaluate_every"] == 0:
@@ -148,7 +149,7 @@ def train(ARGS, run_id):
                         CONFIG["num_eval_games"],
                     )[0]
                 )
-                logger.log_rlloss(agent.total_t, agent.rlloss, episode)
+                #logger.log_rlloss(agent.total_t, agent.rlloss, episode)
 
 
         # Get the paths
@@ -192,10 +193,16 @@ def run_train_with_params(param_sets):
 # ]
 
 # grid search
-epsilon_start_values = [0.5, 0.7, 1.0]
-epsilon_end_values = [0.05, 0.1, 0.2]
-discount_factor_values = [0.95, 0.98, 0.99, 1.0]
-epsilon_decay_steps_values = [10000, 20000, 50000]
+# epsilon_start_values = [0.5, 0.7, 1.0]
+# epsilon_end_values = [0.05, 0.1, 0.2]
+# discount_factor_values = [0.95, 0.98]
+# epsilon_decay_steps_values = [10000, 20000, 50000]
+
+#grid search run 2 values
+epsilon_start_values = [1.0]
+epsilon_end_values = [0.05]
+discount_factor_values = [0.95]
+epsilon_decay_steps_values = [50000]
 
 # Generate all combinations of parameter values for grid search
 param_sets = []
