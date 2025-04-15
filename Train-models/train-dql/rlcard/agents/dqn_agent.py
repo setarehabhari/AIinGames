@@ -225,12 +225,12 @@ class DQNAgent(object):
 
         loss = self.q_estimator.update(state_batch, action_batch, target_batch)
         self.rlloss = loss
-        #print('\rINFO - Step {}, rl-loss: {}'.format(self.total_t, loss), end='')
+        print('\rINFO - Step {}, rl-loss: {}'.format(self.total_t, loss), end='')
 
         # Update the target estimator
         if self.train_t % self.update_target_estimator_every == 0:
             self.target_estimator = deepcopy(self.q_estimator)
-            #print("\nINFO - Copied model parameters to target network.")
+            print("\nINFO - Copied model parameters to target network.")
 
         self.train_t += 1
 

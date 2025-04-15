@@ -202,7 +202,9 @@ def run_train_with_params(param_sets):
 epsilon_start_values = [1.0]
 epsilon_end_values = [0.05]
 discount_factor_values = [0.95]
-epsilon_decay_steps_values = [50000]
+epsilon_decay_steps_values = [10000]
+update_target = [500]
+# update target updates the q tables more
 
 # Generate all combinations of parameter values for grid search
 param_sets = []
