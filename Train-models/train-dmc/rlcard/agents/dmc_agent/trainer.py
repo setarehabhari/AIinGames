@@ -374,6 +374,12 @@ class DMCTrainer:
         except KeyboardInterrupt:
             log.info('Training interrupted. Closing processes...')
         finally:
+            print("before cleanup:")
+            allocated_memory = torch.cuda.memory_allocated()
+            
+            print(f"Allocated memory: {allocated_memory / 1024**2:.2f} MB")
+            
+
             # Ensure actor processes are terminated
             for actor in actor_processes:
                 actor.join(timeout=5)  # Wait for process to terminate
@@ -393,6 +399,12 @@ class DMCTrainer:
                 thread.join()  # Ensure threads finish before termination
             
             torch.cuda.empty_cache()
+
+            print("after cleanup:")
+            allocated_memory = torch.cuda.memory_allocated()
+            
+            print(f"Allocated memory: {allocated_memory / 1024**2:.2f} MB")
+            
 
             log.info('All processes and threads terminated.')
             
