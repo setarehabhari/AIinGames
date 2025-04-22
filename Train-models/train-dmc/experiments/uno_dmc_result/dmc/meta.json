@@ -1,7 +1,7 @@
 {
     "args": {},
-    "date_end": null,
-    "date_start": "2025-04-10 03:23:41.733605",
+    "date_end": "2025-04-21 04:18:20.395780",
+    "date_start": "2025-04-21 04:17:33.815339",
     "env": {
         "ALLUSERSPROFILE": "C:\\ProgramData",
         "APPDATA": "C:\\Users\\bonni\\AppData\\Roaming",
@@ -14,6 +14,8 @@
         "CUDA_PATH": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.8",
         "CUDA_PATH_V12_8": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.8",
         "DRIVERDATA": "C:\\Windows\\System32\\Drivers\\DriverData",
+        "FPS_BROWSER_APP_PROFILE_STRING": "Internet Explorer",
+        "FPS_BROWSER_USER_PROFILE_STRING": "Default",
         "HOMEDRIVE": "C:",
         "HOMEPATH": "\\Users\\bonni",
         "LOCALAPPDATA": "C:\\Users\\bonni\\AppData\\Local",
@@ -50,11 +52,11 @@
     },
     "git": {
         "branch": "train-models",
-        "commit": "e585d8eecaa3be96d52be58279c79ae1a63f7a89",
+        "commit": "70e3f85751a0f4d8c2cc53e724674e7ffc11b80d",
         "is_dirty": true,
         "path": "D:\\User\\Documents\\GitHub\\AIinGames\\.git"
     },
     "slurm": null,
-    "successful": false,
+    "successful": true,
     "xpid": "dmc"
 }

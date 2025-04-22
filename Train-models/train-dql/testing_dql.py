@@ -66,7 +66,7 @@ ARGS = {
     "train_every":1,
     "mlp_layers": [64,64],
     "learning_rate":0.00005,
-    "device": "cpu",
+    "device": 0,
     "save_path":None,
     "save_every":float('inf'),
 }
@@ -138,7 +138,7 @@ def train(ARGS, run_id):
             for ts in trajectories[0]:
                 agent.feed(ts)
                 # this is to log every step of every episode
-                logger.log_rlloss(agent.total_t, agent.rlloss, episode) 
+                #logger.log_rlloss(agent.total_t, agent.rlloss, episode) 
 
             # Evaluate the performance. Play with random agents.
             if episode % CONFIG["evaluate_every"] == 0:

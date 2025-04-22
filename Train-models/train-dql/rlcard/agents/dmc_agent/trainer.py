@@ -351,9 +351,12 @@ class DMCTrainer:
                 )
 
         timer = timeit.default_timer
+        print(timer)
         try:
             last_checkpoint_time = timer() - self.save_interval * 60
             while frames < self.total_frames:
+                print(frames)
+                print(self.total_frames)
                 start_frames = frames
                 start_time = timer()
                 time.sleep(5)

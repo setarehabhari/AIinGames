@@ -61,7 +61,8 @@ class DQNAgent(object):
                  device=None,
                  save_path=None,
                  save_every=float('inf'),
-                 rlloss=0):
+                 #rlloss=0
+                 ):
 
         '''
         Q-Learning algorithm for off-policy TD control using Function Approximation.
@@ -97,7 +98,7 @@ class DQNAgent(object):
         self.batch_size = batch_size
         self.num_actions = num_actions
         self.train_every = train_every
-        self.rlloss = 0
+        #self.rlloss = 0
 
         # Torch device
         if device is None:
@@ -224,7 +225,7 @@ class DQNAgent(object):
         state_batch = np.array(state_batch)
 
         loss = self.q_estimator.update(state_batch, action_batch, target_batch)
-        self.rlloss = loss
+        #self.rlloss = loss
         print('\rINFO - Step {}, rl-loss: {}'.format(self.total_t, loss), end='')
 
         # Update the target estimator
