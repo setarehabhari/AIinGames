@@ -84,10 +84,17 @@ class FileWriter:
         self._logger = logging.getLogger('palaas/out')
 
         # to stdout handler
-        shandle = logging.StreamHandler()
-        shandle.setFormatter(formatter)
-        self._logger.addHandler(shandle)
-        self._logger.setLevel(logging.INFO)
+        # shandle = logging.StreamHandler()
+        # shandle.setFormatter(formatter)
+        # self._logger.addHandler(shandle)
+        # self._logger.setLevel(logging.INFO)
+
+        # check if handler exists
+        if not self._logger.handlers:
+            shandle = logging.StreamHandler()
+            shandle.setFormatter(formatter)
+            self._logger.addHandler(shandle)
+            self._logger.setLevel(logging.INFO)
 
         rootdir = os.path.expandvars(os.path.expanduser(rootdir))
         # to file handler

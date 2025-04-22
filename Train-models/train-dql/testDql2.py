@@ -201,7 +201,7 @@ def run_train_with_params(param_sets):
 epsilon_end_values = [0.05, 0.1, 0.2]
 discount_factor_values = [0.75, 0.825, 0.95]
 learning_rate_values = [0.0001, 0.001, 0.01]
-epsilon_decay_steps_values = [1000, 3000]
+epsilon_decay_steps_values = [1000, 3000, 5000]
 # update target updates the q tables more
 
 # Generate all combinations of parameter values for grid search
@@ -218,5 +218,4 @@ for epsilon_end in epsilon_end_values:
                 param["run_name"] = f"eps{epsilon_end}_gamma{discount_factor}_lr{learning_rate}_decay{decay_steps}"
                 param_sets.append(param)
 
-train(ARGS, "baseline")
 run_train_with_params(param_sets)

@@ -351,6 +351,7 @@ class DMCTrainer:
                 )
 
         timer = timeit.default_timer
+        
         try:
             last_checkpoint_time = timer() - self.save_interval * 60
             while frames < self.total_frames:
@@ -371,11 +372,28 @@ class DMCTrainer:
                     pprint.pformat(stats),
                 )
         except KeyboardInterrupt:
-            return
-        else:
-            for thread in threads:
-                thread.join()
-            log.info('Learning finished after %d frames.', frames)
+            log.info('Training interrupted. Closing processes...')
+        finally:
+            # Ensure actor processes are terminated
+            for actor in actor_processes:
+                actor.join(timeout=5)  # Wait for process to terminate
+                actor.terminate()  # Terminate each actor process
 
-        checkpoint(frames)
-        self.plogger.close()
+            # Cleanup shared CUDA tensors before terminating threads
+            for model in models.values():
+                for agent in model.agents:
+                    for param in agent.parameters():
+                        if param.is_cuda:  # Check if parameter is a CUDA tensor
+                            param.cpu()  # Move to CPU to release GPU memory
+
+            # Ensure threads are joined after moving tensors to CPU
+            for thread in threads:
+                thread.join()  # Ensure threads finish before termination
+            
+            log.info('All processes and threads terminated.')
+            
+            # Save the final checkpoint
+            checkpoint(frames)
+
+            self.plogger.close()  # Close logging
+

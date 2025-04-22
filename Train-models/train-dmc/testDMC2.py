@@ -17,9 +17,9 @@ BASE_ARGS = {
     "save_interval": 30,
     "num_actor_devices": 1,
     "num_actors": 5,
-    "training_device": 0,
-    "savedir": "experiments/uno_dmc_grid/",
-    "total_frames": 100000000000,
+    "training_device":'',
+    "savedir": "experiments/uno_dmc_grid_4_22_5CPU/",
+    "total_frames": 100000,
     "exp_epsilon": 0.01,
     "batch_size": 32,
     "unroll_length": 100,
@@ -35,14 +35,14 @@ BASE_ARGS = {
 def train(args_dict, run_name):
     args = argparse.Namespace(**args_dict)
     args.xpid = run_name
-    args.savedir = os.path.join(BASE_ARGS["savedir"], run_name)
-    os.makedirs(args.savedir, exist_ok=True)
+    #args.savedir = os.path.join(BASE_ARGS["savedir"], run_name)
+    #os.makedirs(args.savedir, exist_ok=True)
 
     # Save args to txt file
-    args_log_path = os.path.join(args.savedir, "args.txt")
-    with open(args_log_path, "w") as f:
-        for key, value in vars(args).items():
-            f.write(f"{key}: {value}\n")
+    # args_log_path = os.path.join(args.savedir, "args.txt")
+    # with open(args_log_path, "w") as f:
+    #     for key, value in vars(args).items():
+    #         f.write(f"{key}: {value}\n")
 
     env = rlcard.make(CONFIG["env"])
 
@@ -91,27 +91,17 @@ def run_train_with_params(param_sets):
     """
 
 
-
-
 # ==== Grid Search Settings ====
-learning_rates = [0.0001]
-unroll_lengths = [25, 50]
-batch_sizes = [32]
-total_frames_list = [30000, 50000]
+unroll_lengths = [25, 50, 75]
 
 param_sets = []
-for lr in learning_rates:
-    for ul in unroll_lengths:
-        for bs in batch_sizes:
-            for tf in total_frames_list:
-                args = BASE_ARGS.copy()
-                args["learning_rate"] = lr
-                args["unroll_length"] = ul
-                args["batch_size"] = bs
-                args["total_frames"] = tf
-                args["run_name"] = f"lr{lr}_ul{ul}_bs{bs}_tf{tf}"
-                param_sets.append(args)
+for ul in unroll_lengths:
+    args = BASE_ARGS.copy() 
+    args["unroll_length"] = ul
+    args["run_name"] = f"ul{ul}" 
+    param_sets.append(args) 
 
-# Run baseline + grid search
-train(BASE_ARGS, "baseline")
-run_train_with_params(param_sets)
+if __name__ == '__main__':
+    # Run baseline + grid search
+    train(BASE_ARGS, "baseline")
+    run_train_with_params(param_sets)
