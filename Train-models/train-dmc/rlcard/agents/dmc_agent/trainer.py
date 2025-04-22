@@ -382,7 +382,9 @@ class DMCTrainer:
             # Cleanup shared CUDA tensors before terminating threads
             for model in models.values():
                 for agent in model.agents:
+                    print(f"agent: {agent}")
                     for param in agent.parameters():
+                        print(f"is_cuda: {param.is_cuda}")
                         if param.is_cuda:  # Check if parameter is a CUDA tensor
                             param.cpu()  # Move to CPU to release GPU memory
 
@@ -390,6 +392,8 @@ class DMCTrainer:
             for thread in threads:
                 thread.join()  # Ensure threads finish before termination
             
+            torch.cuda.empty_cache()
+
             log.info('All processes and threads terminated.')
             
             # Save the final checkpoint

@@ -3,6 +3,7 @@ import torch
 import rlcard
 from rlcard.agents.dmc_agent import DMCTrainer
 import argparse
+from datetime import datetime
 
 # ==== Fixed Parameters ====
 CONFIG = {
@@ -17,8 +18,7 @@ BASE_ARGS = {
     "save_interval": 30,
     "num_actor_devices": 1,
     "num_actors": 5,
-    "training_device":'',
-    "savedir": "experiments/uno_dmc_grid_4_22_5CPU/",
+    "training_device": 0,
     "total_frames": 100000,
     "exp_epsilon": 0.01,
     "batch_size": 32,
@@ -32,11 +32,25 @@ BASE_ARGS = {
     "epsilon": 0.00001,
 }
 
+def generate_savedir(training_device):
+    # Get the current date and time
+    now = datetime.now()
+    day = now.strftime("%d")  # Day (two digits)
+    hour = now.strftime("%H")  # Hour (two digits)
+    minute = now.strftime("%M")  # Minute (two digits)
+    # Use the training device index (e.g., "cuda:0", "cpu", etc.)
+    device_str = str(training_device)
+    
+    # Construct the save directory name
+    savedir = f"experiments/uno_dmc_grid_{day}_{hour}_{minute}_{device_str}/"
+    os.makedirs(savedir, exist_ok=True)  # Ensure the directory exists
+    return savedir
+
 def train(args_dict, run_name):
     args = argparse.Namespace(**args_dict)
     args.xpid = run_name
-    #args.savedir = os.path.join(BASE_ARGS["savedir"], run_name)
-    #os.makedirs(args.savedir, exist_ok=True)
+    # Update savedir dynamically based on the current date and time
+    args.savedir = generate_savedir(args.training_device)
 
     # Save args to txt file
     # args_log_path = os.path.join(args.savedir, "args.txt")
@@ -64,32 +78,6 @@ def train(args_dict, run_name):
 def run_train_with_params(param_sets):
     for params in param_sets:
         train(params, params["run_name"])
-
-    """
-    Deep Monte-Carlo
-
-    Args:
-        env: RLCard environment
-        load_model (boolean): Whether loading an existing model
-        xpid (string): Experiment id (default: dmc)
-        save_interval (int): Time interval (in minutes) at which to save the model
-        num_actor_devices (int): The number devices used for simulation
-        num_actors (int): Number of actors for each simulation device
-        training_device (str): The index of the GPU used for training models, or `cpu`.
-        savedir (string): Root dir where experiment data will be saved
-        total_frames (int): Total environment frames to train for
-        exp_epsilon (float): The prbability for exploration
-        batch_size (int): Learner batch size
-        unroll_length (int): The unroll length (time dimension)
-        num_buffers (int): Number of shared-memory buffers
-        num_threads (int): Number learner threads
-        max_grad_norm (int): Max norm of gradients
-        learning_rate (float): Learning rate
-        alpha (float): RMSProp smoothing constant
-        momentum (float): RMSProp momentum
-        epsilon (float): RMSProp epsilon
-    """
-
 
 # ==== Grid Search Settings ====
 unroll_lengths = [25, 50, 75]
