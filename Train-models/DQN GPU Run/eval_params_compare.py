@@ -79,25 +79,28 @@ with open(log_file_path, 'w') as log_file:
     for param, param_data in hyperparameter_data.items():
         log_file.write(f"=== {param} ===\n")
         
+        # Initialize lists to store statistics for comparison
+        avg_rewards_all_values = []
+        max_rewards_all_values = []
+        slopes_all_values = []
+
         for param_value, metrics in param_data.items():
             avg_reward = np.mean(metrics['avg_reward'])
             max_reward = np.mean(metrics['max_reward'])
             slope = np.mean(metrics['slope'])
             
-            # Write the results to the log file
+            # Log individual hyperparameter results
             log_file.write(f"Hyperparameter: {param} = {param_value}\n")
             log_file.write(f"Average Reward: {avg_reward:.4f}\n")
             log_file.write(f"Max Reward: {max_reward:.4f}\n")
             log_file.write(f"Slope: {slope:.4f}\n\n")
-            
-            # Print the effect of this hyperparameter
-            print(f"{param}: {param_value}")
-            print(f"Average Reward: {avg_reward:.4f}")
-            print(f"Max Reward: {max_reward:.4f}")
-            print(f"Slope: {slope:.4f}")
-            print("-" * 40)
-            
-            # Visualize the effect of each hyperparameter
+
+            # Collect data for later comparison
+            avg_rewards_all_values.append(avg_reward)
+            max_rewards_all_values.append(max_reward)
+            slopes_all_values.append(slope)
+
+            # Visualize the effect of each hyperparameter on its own plot
             plt.figure(figsize=(10, 6))
             plt.plot(metrics['avg_reward'], label="Avg Reward", marker='o')
             plt.xlabel("Run")
@@ -105,18 +108,50 @@ with open(log_file_path, 'w') as log_file:
             plt.title(f"Effect of {param}={param_value} on Average Reward")
             plt.grid(True)
 
-            # Fixed axis ranges and ticks
-            plt.xlim(-1, 30)
-            plt.xticks(np.arange(0, 31, 2))
-
+            # Set x and y axis ranges
+            plt.xlim(0, len(metrics['avg_reward']) - 1)  # Dynamic x-axis based on the number of runs
+            plt.xticks(np.arange(0, len(metrics['avg_reward']), 2))  # Ticks every 2 runs (adjust as needed)
             plt.ylim(-0.0001, 0.04)
-            plt.yticks(np.arange(-0.01, 0.040, 0.005))
+            plt.yticks(np.arange(-0.01, 0.041, 0.005))
 
-
-            # Save the plot with the hyperparameter value in the filename
+            # Save the individual plot
             plot_file_path = os.path.join(".", f"{param}_vs_avg_reward_{param_value}.png")
             plt.savefig(plot_file_path)
             plt.close()
+
+        # Create a table-like summary for each hyperparameter
+        log_file.write(f"Comparison of {param} Values:\n")
+        for i, param_value in enumerate(param_data.keys()):
+            log_file.write(f"{param}={param_value} | Avg Reward: {avg_rewards_all_values[i]:.4f}, Max Reward: {max_rewards_all_values[i]:.4f}, Slope: {slopes_all_values[i]:.4f}\n")
+
+        log_file.write("\n" + "="*50 + "\n")
+
+        # Now, create a combined plot for all values of this hyperparameter
+        plt.figure(figsize=(10, 6))
+        plt.xlabel("Run")
+        plt.ylabel("Avg Reward")
+        plt.title(f"Effect of {param} on Average Reward")
+        
+        # Plot each hyperparameter value on the same graph
+        for i, (param_value, metrics) in enumerate(param_data.items()):
+            avg_rewards = metrics['avg_reward']
+            label = f"{param} = {param_value}"  # Label for the legend
+            plt.plot(avg_rewards, label=label, marker='o', linestyle='-', color=plt.cm.viridis(i / len(param_data)))  # Using a color map to differentiate lines
+        
+        # Add grid, legend, and axis limits
+        plt.grid(True)
+        plt.xlim(0, len(avg_rewards) - 1)  # Dynamic x-axis based on the number of runs
+        plt.xticks(np.arange(0, len(avg_rewards), 2))
+        plt.ylim(-0.0001, 0.04)
+        plt.yticks(np.arange(-0.01, 0.041, 0.005))
+
+        # Add a legend to distinguish the lines
+        plt.legend()
+
+        # Save the combined plot with all values of the hyperparameter in the filename
+        combined_plot_file_path = os.path.join(".", f"{param}_vs_avg_reward_all_values.png")
+        plt.savefig(combined_plot_file_path)
+        plt.close()
 
 # Finished message
 print("Evaluation complete. Results are logged to 'eval_dqn_params.txt' and plots are saved.")
