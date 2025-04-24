@@ -16,6 +16,7 @@ def summarize_dmc_logs(log_dir):
         last_row = df.iloc[-1]
         
         # Calculate the mean reward for both agents
+        #print(df['mean_episode_return_0'])
         mean_reward_0 = df['mean_episode_return_0'].mean()
         mean_reward_1 = df['mean_episode_return_1'].mean()
 
@@ -51,9 +52,11 @@ def summarize_dmc_logs(log_dir):
 
 # Example usage
 if __name__ == '__main__':
-    print("GPU")
-    summarize_dmc_logs('experiments/uno_dmc_grid_4_22_3') 
-    print("CPU") 
-    summarize_dmc_logs('experiments/uno_dmc_grid_4_22_4CPU')  
-    print("CPU2")
-    summarize_dmc_logs('experiments/uno_dmc_grid_4_22_5CPU')  
+    # print("GPU\n")
+    # summarize_dmc_logs('experiments/uno_dmc_grid_4_22_3') 
+    # print("CPU\n") 
+    # summarize_dmc_logs('experiments/uno_dmc_grid_4_22_4CPU')  
+    # print("CPU2\n")
+    summarize_dmc_logs('experiments/uno_dmc_grid_22_22_46_')  
+
+

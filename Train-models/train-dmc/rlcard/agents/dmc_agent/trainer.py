@@ -371,45 +371,45 @@ class DMCTrainer:
                     fps,
                     pprint.pformat(stats),
                 )
+            
         except KeyboardInterrupt:
             log.info('Training interrupted. Closing processes...')
         finally:
-            print("before cleanup:")
-            allocated_memory = torch.cuda.memory_allocated()
+            # Save the final checkpoint
+
+
+            # print("before cleanup:")
+            # allocated_memory = torch.cuda.memory_allocated()
             
-            print(f"Allocated memory: {allocated_memory / 1024**2:.2f} MB")
+            # print(f"Allocated memory: {allocated_memory / 1024**2:.2f} MB")
             
+            # Ensure threads are joined after moving tensors to CPU
+            for thread in threads:
+                thread.join()  # Ensure threads finish before termination
 
             # Ensure actor processes are terminated
             for actor in actor_processes:
-                actor.join(timeout=5)  # Wait for process to terminate
-                actor.terminate()  # Terminate each actor process
+                actor.join(timeout=60)
+                actor.terminate()
 
             # Cleanup shared CUDA tensors before terminating threads
             for model in models.values():
                 for agent in model.agents:
                     print(f"agent: {agent}")
                     for param in agent.parameters():
-                        print(f"is_cuda: {param.is_cuda}")
                         if param.is_cuda:  # Check if parameter is a CUDA tensor
                             param.cpu()  # Move to CPU to release GPU memory
+                            del param
 
-            # Ensure threads are joined after moving tensors to CPU
-            for thread in threads:
-                thread.join()  # Ensure threads finish before termination
-            
-            torch.cuda.empty_cache()
+            # torch.cuda.empty_cache()
 
-            print("after cleanup:")
-            allocated_memory = torch.cuda.memory_allocated()
+            # print("after cleanup:")
+            # allocated_memory = torch.cuda.memory_allocated()
             
-            print(f"Allocated memory: {allocated_memory / 1024**2:.2f} MB")
+            # print(f"Allocated memory: {allocated_memory / 1024**2:.2f} MB")
             
-
-            log.info('All processes and threads terminated.')
-            
-            # Save the final checkpoint
             checkpoint(frames)
-
+            log.info('All processes and threads terminated.')
+    
             self.plogger.close()  # Close logging
 

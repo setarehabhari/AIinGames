@@ -4,6 +4,7 @@ import rlcard
 from rlcard.agents.dmc_agent import DMCTrainer
 import argparse
 from datetime import datetime
+from itertools import product
 
 # ==== Fixed Parameters ====
 CONFIG = {
@@ -18,7 +19,7 @@ BASE_ARGS = {
     "save_interval": 30,
     "num_actor_devices": 1,
     "num_actors": 5,
-    "training_device": 0,
+    "training_device": '',
     "total_frames": 100000,
     "exp_epsilon": 0.01,
     "batch_size": 32,
@@ -32,31 +33,23 @@ BASE_ARGS = {
     "epsilon": 0.00001,
 }
 
-def generate_savedir(training_device):
-    # Get the current date and time
+# Generate main save directory once
+def generate_base_savedir(training_device):
     now = datetime.now()
-    day = now.strftime("%d")  # Day (two digits)
-    hour = now.strftime("%H")  # Hour (two digits)
-    minute = now.strftime("%M")  # Minute (two digits)
-    # Use the training device index (e.g., "cuda:0", "cpu", etc.)
+    timestamp = now.strftime("%d_%H_%M")
     device_str = str(training_device)
-    
-    # Construct the save directory name
-    savedir = f"experiments/uno_dmc_grid_{day}_{hour}_{minute}_{device_str}/"
-    os.makedirs(savedir, exist_ok=True)  # Ensure the directory exists
+    savedir = f"experiments/uno_dmc_grid_{timestamp}_{device_str}/"
+    os.makedirs(savedir, exist_ok=True)
     return savedir
+
+BASE_SAVE_DIR = generate_base_savedir(BASE_ARGS["training_device"])
+BASE_ARGS["savedir"] = BASE_SAVE_DIR
 
 def train(args_dict, run_name):
     args = argparse.Namespace(**args_dict)
     args.xpid = run_name
-    # Update savedir dynamically based on the current date and time
-    args.savedir = generate_savedir(args.training_device)
-
-    # Save args to txt file
-    # args_log_path = os.path.join(args.savedir, "args.txt")
-    # with open(args_log_path, "w") as f:
-    #     for key, value in vars(args).items():
-    #         f.write(f"{key}: {value}\n")
+    args.savedir = os.path.join(BASE_SAVE_DIR, run_name)
+    os.makedirs(args.savedir, exist_ok=True)
 
     env = rlcard.make(CONFIG["env"])
 
@@ -81,15 +74,20 @@ def run_train_with_params(param_sets):
 
 # ==== Grid Search Settings ====
 unroll_lengths = [25, 50, 75]
+batch_sizes = [32, 64, 128]
+learning_rates = [1e-4, 5e-4, 1e-3]
+exp_epsilons = [0.01, 0.05, 0.1]
 
 param_sets = []
-for ul in unroll_lengths:
-    args = BASE_ARGS.copy() 
+for ul, bs, lr, eps in product(unroll_lengths, batch_sizes, learning_rates, exp_epsilons):
+    args = BASE_ARGS.copy()
     args["unroll_length"] = ul
-    args["run_name"] = f"ul{ul}" 
-    param_sets.append(args) 
+    args["batch_size"] = bs
+    args["learning_rate"] = lr
+    args["exp_epsilon"] = eps
+    args["run_name"] = f"ul{ul}_bs{bs}_lr{lr}_eps{eps}"
+    param_sets.append(args)
 
 if __name__ == '__main__':
-    # Run baseline + grid search
     train(BASE_ARGS, "baseline")
     run_train_with_params(param_sets)

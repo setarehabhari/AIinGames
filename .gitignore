@@ -50,6 +50,7 @@ ExportedObj/
 *.zip
 *.pth
 *.pyc
+*.meta
 
 # Unity3D generated meta files
 *.pidb.meta
