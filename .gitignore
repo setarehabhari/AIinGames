@@ -75,3 +75,7 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# Specific Files
+Train-models/train-dqn/experiments/DQN1/DQN1rlLoss.log
+Train-models/train-dqn/experiments/DQN2/DQN2rlLoss.log

@@ -1,0 +1,82 @@
+=== epsilon_start ===
+Hyperparameter: epsilon_start = 0.5
+Average Reward: 0.0154
+Max Reward: 0.2478
+Slope: 0.0002
+
+Hyperparameter: epsilon_start = 0.7
+Average Reward: 0.0147
+Max Reward: 0.2789
+Slope: 0.0002
+
+Hyperparameter: epsilon_start = 1.0
+Average Reward: 0.0151
+Max Reward: 0.2622
+Slope: 0.0002
+
+Comparison of epsilon_start Values:
+epsilon_start=0.5 | Avg Reward: 0.0154, Max Reward: 0.2478, Slope: 0.0002
+epsilon_start=0.7 | Avg Reward: 0.0147, Max Reward: 0.2789, Slope: 0.0002
+epsilon_start=1.0 | Avg Reward: 0.0151, Max Reward: 0.2622, Slope: 0.0002
+
+==================================================
+=== epsilon_end ===
+Hyperparameter: epsilon_end = 0.05
+Average Reward: 0.0139
+Max Reward: 0.2667
+Slope: 0.0002
+
+Hyperparameter: epsilon_end = 0.1
+Average Reward: 0.0164
+Max Reward: 0.2544
+Slope: 0.0001
+
+Hyperparameter: epsilon_end = 0.2
+Average Reward: 0.0149
+Max Reward: 0.2678
+Slope: 0.0003
+
+Comparison of epsilon_end Values:
+epsilon_end=0.05 | Avg Reward: 0.0139, Max Reward: 0.2667, Slope: 0.0002
+epsilon_end=0.1 | Avg Reward: 0.0164, Max Reward: 0.2544, Slope: 0.0001
+epsilon_end=0.2 | Avg Reward: 0.0149, Max Reward: 0.2678, Slope: 0.0003
+
+==================================================
+=== discount_factor ===
+Hyperparameter: discount_factor = 0.95
+Average Reward: 0.0161
+Max Reward: 0.2644
+Slope: 0.0002
+
+Hyperparameter: discount_factor = 0.98
+Average Reward: 0.0141
+Max Reward: 0.2615
+Slope: 0.0002
+
+Comparison of discount_factor Values:
+discount_factor=0.95 | Avg Reward: 0.0161, Max Reward: 0.2644, Slope: 0.0002
+discount_factor=0.98 | Avg Reward: 0.0141, Max Reward: 0.2615, Slope: 0.0002
+
+==================================================
+=== epsilon_decay_steps ===
+Hyperparameter: epsilon_decay_steps = 10000
+Average Reward: 0.0166
+Max Reward: 0.2533
+Slope: 0.0002
+
+Hyperparameter: epsilon_decay_steps = 20000
+Average Reward: 0.0166
+Max Reward: 0.2622
+Slope: 0.0002
+
+Hyperparameter: epsilon_decay_steps = 50000
+Average Reward: 0.0120
+Max Reward: 0.2733
+Slope: 0.0001
+
+Comparison of epsilon_decay_steps Values:
+epsilon_decay_steps=10000 | Avg Reward: 0.0166, Max Reward: 0.2533, Slope: 0.0002
+epsilon_decay_steps=20000 | Avg Reward: 0.0166, Max Reward: 0.2622, Slope: 0.0002
+epsilon_decay_steps=50000 | Avg Reward: 0.0120, Max Reward: 0.2733, Slope: 0.0001
+
+==================================================
