@@ -1,0 +1,321 @@
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.0001_eps0.01/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.0001_eps0.01/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.0001_eps0.05
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.0001_eps0.05/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.0001_eps0.05/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.0001_eps0.05/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.0001_eps0.05/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.0001_eps0.1
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.0001_eps0.1/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.0001_eps0.1/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.0001_eps0.1/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.0001_eps0.1/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.0005_eps0.01
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.0005_eps0.01/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.0005_eps0.01/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.0005_eps0.01/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.0005_eps0.01/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.0005_eps0.05
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.0005_eps0.05/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.0005_eps0.05/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.0005_eps0.05/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.0005_eps0.05/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.0005_eps0.1
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.0005_eps0.1/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.0005_eps0.1/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.0005_eps0.1/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.0005_eps0.1/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.001_eps0.01
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.001_eps0.01/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.001_eps0.01/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.001_eps0.01/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.001_eps0.01/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.001_eps0.05
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.001_eps0.05/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.001_eps0.05/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.001_eps0.05/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.001_eps0.05/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.001_eps0.1
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.001_eps0.1/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.001_eps0.1/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.001_eps0.1/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul50_bs32_lr0.001_eps0.1/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.0001_eps0.01
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.0001_eps0.01/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.0001_eps0.01/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.0001_eps0.01/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.0001_eps0.01/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.0001_eps0.05
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.0001_eps0.05/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.0001_eps0.05/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.0001_eps0.05/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.0001_eps0.05/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.0001_eps0.1
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.0001_eps0.1/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.0001_eps0.1/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.0001_eps0.1/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.0001_eps0.1/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.0005_eps0.01
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.0005_eps0.01/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.0005_eps0.01/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.0005_eps0.01/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.0005_eps0.01/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.0005_eps0.05
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.0005_eps0.05/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.0005_eps0.05/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.0005_eps0.05/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.0005_eps0.05/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.0005_eps0.1
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.0005_eps0.1/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.0005_eps0.1/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.0005_eps0.1/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.0005_eps0.1/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.001_eps0.01
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.001_eps0.01/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.001_eps0.01/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.001_eps0.01/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.001_eps0.01/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.001_eps0.05
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.001_eps0.05/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.001_eps0.05/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.001_eps0.05/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.001_eps0.05/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.001_eps0.1
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.001_eps0.1/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.001_eps0.1/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.001_eps0.1/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul50_bs64_lr0.001_eps0.1/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.0001_eps0.01
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.0001_eps0.01/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.0001_eps0.01/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.0001_eps0.01/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.0001_eps0.01/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.0001_eps0.05
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.0001_eps0.05/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.0001_eps0.05/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.0001_eps0.05/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.0001_eps0.05/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.0001_eps0.1
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.0001_eps0.1/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.0001_eps0.1/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.0001_eps0.1/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.0001_eps0.1/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.0005_eps0.01
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.0005_eps0.01/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.0005_eps0.01/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.0005_eps0.01/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.0005_eps0.01/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.0005_eps0.05
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.0005_eps0.05/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.0005_eps0.05/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.0005_eps0.05/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.0005_eps0.05/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.0005_eps0.1
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.0005_eps0.1/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.0005_eps0.1/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.0005_eps0.1/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.0005_eps0.1/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.001_eps0.01
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.001_eps0.01/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.001_eps0.01/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.001_eps0.01/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.001_eps0.01/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.001_eps0.05
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.001_eps0.05/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.001_eps0.05/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.001_eps0.05/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.001_eps0.05/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.001_eps0.1
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.001_eps0.1/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.001_eps0.1/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.001_eps0.1/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul50_bs128_lr0.001_eps0.1/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.0001_eps0.01
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.0001_eps0.01/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.0001_eps0.01/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.0001_eps0.01/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.0001_eps0.01/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.0001_eps0.05
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.0001_eps0.05/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.0001_eps0.05/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.0001_eps0.05/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.0001_eps0.05/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.0001_eps0.1
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.0001_eps0.1/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.0001_eps0.1/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.0001_eps0.1/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.0001_eps0.1/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.0005_eps0.01
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.0005_eps0.01/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.0005_eps0.01/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.0005_eps0.01/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.0005_eps0.01/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.0005_eps0.05
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.0005_eps0.05/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.0005_eps0.05/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.0005_eps0.05/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.0005_eps0.05/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.0005_eps0.1
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.0005_eps0.1/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.0005_eps0.1/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.0005_eps0.1/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.0005_eps0.1/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.001_eps0.01
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.001_eps0.01/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.001_eps0.01/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.001_eps0.01/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.001_eps0.01/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.001_eps0.05
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.001_eps0.05/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.001_eps0.05/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.001_eps0.05/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.001_eps0.05/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.001_eps0.1
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.001_eps0.1/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.001_eps0.1/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.001_eps0.1/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul75_bs32_lr0.001_eps0.1/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.0001_eps0.01
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.0001_eps0.01/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.0001_eps0.01/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.0001_eps0.01/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.0001_eps0.01/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.0001_eps0.05
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.0001_eps0.05/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.0001_eps0.05/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.0001_eps0.05/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.0001_eps0.05/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.0001_eps0.1
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.0001_eps0.1/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.0001_eps0.1/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.0001_eps0.1/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.0001_eps0.1/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.0005_eps0.01
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.0005_eps0.01/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.0005_eps0.01/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.0005_eps0.01/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.0005_eps0.01/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.0005_eps0.05
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.0005_eps0.05/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.0005_eps0.05/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.0005_eps0.05/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.0005_eps0.05/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.0005_eps0.1
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.0005_eps0.1/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.0005_eps0.1/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.0005_eps0.1/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.0005_eps0.1/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.001_eps0.01
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.001_eps0.01/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.001_eps0.01/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.001_eps0.01/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.001_eps0.01/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.001_eps0.05
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.001_eps0.05/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.001_eps0.05/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.001_eps0.05/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.001_eps0.05/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.001_eps0.1
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.001_eps0.1/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.001_eps0.1/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.001_eps0.1/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul75_bs64_lr0.001_eps0.1/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.0001_eps0.01
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.0001_eps0.01/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.0001_eps0.01/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.0001_eps0.01/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.0001_eps0.01/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.0001_eps0.05
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.0001_eps0.05/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.0001_eps0.05/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.0001_eps0.05/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.0001_eps0.05/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.0001_eps0.1
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.0001_eps0.1/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.0001_eps0.1/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.0001_eps0.1/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.0001_eps0.1/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.0005_eps0.01
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.0005_eps0.01/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.0005_eps0.01/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.0005_eps0.01/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.0005_eps0.01/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.0005_eps0.05
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.0005_eps0.05/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.0005_eps0.05/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.0005_eps0.05/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.0005_eps0.05/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.0005_eps0.1
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.0005_eps0.1/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.0005_eps0.1/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.0005_eps0.1/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.0005_eps0.1/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.001_eps0.01
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.001_eps0.01/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.001_eps0.01/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.001_eps0.01/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.001_eps0.01/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.001_eps0.05
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.001_eps0.05/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.001_eps0.05/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.001_eps0.05/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.001_eps0.05/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']
+Creating log directory: experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.001_eps0.1
+Saving arguments to experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.001_eps0.1/meta.json
+Saving messages to experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.001_eps0.1/out.log
+Saving logs data to experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.001_eps0.1/logs.csv
+Saving logs' fields to experiments/uno_dmc_grid_22_22_46_/ul75_bs128_lr0.001_eps0.1/fields.csv
+Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']

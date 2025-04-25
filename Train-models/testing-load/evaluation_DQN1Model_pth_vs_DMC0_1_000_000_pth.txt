@@ -1,0 +1,7 @@
+Number of Games: 10000
+Models: ['DQN1Model.pth', 'DMC0_1_000_000.pth']
+Player 0 (DQN1Model.pth): Avg Reward = 0.1356
+Player 1 (DMC0_1_000_000.pth): Avg Reward = -0.1356
+Wins - Player 0: 5678, Player 1: 4322
+Win Rate - Player 0: 0.5678, Player 1: 0.4322
+========================================

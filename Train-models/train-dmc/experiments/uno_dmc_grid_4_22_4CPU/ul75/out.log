@@ -1,3 +1,0 @@
-Saving logs data to experiments/uno_dmc_grid_4_22_4CPU/ul75/logs.csv
-Saving logs' fields to experiments/uno_dmc_grid_4_22_4CPU/ul75/fields.csv
-Updated log fields: ['_tick', '_time', 'frames', 'mean_episode_return_0', 'loss_0', 'mean_episode_return_1', 'loss_1']

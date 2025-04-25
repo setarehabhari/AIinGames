@@ -20,7 +20,7 @@ BASE_ARGS = {
     "num_actor_devices": 1,
     "num_actors": 5,
     "training_device": 0,
-    "total_frames": 100000,
+    "total_frames": 10000000, # change this for the runs
     "exp_epsilon": 0.05,
     "batch_size": 32,
     "unroll_length": 25,
@@ -56,5 +56,5 @@ def train(args_dict, run_name):
     trainer.start()
 
 if __name__ == '__main__':
-    train(BASE_ARGS, "DMC3")
+    train(BASE_ARGS, "DMC10000000")
     

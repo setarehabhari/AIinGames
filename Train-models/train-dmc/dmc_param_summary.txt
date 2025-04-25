@@ -1,0 +1,27 @@
+=== ul ===
+ul=25 | Avg Reward: 0.0139 | Max Reward: 0.0725
+ul=50 | Avg Reward: 0.0135 | Max Reward: 0.0708
+ul=75 | Avg Reward: 0.0116 | Max Reward: 0.0620
+
+==================================================
+
+=== batch_size ===
+batch_size=32 | Avg Reward: 0.0160 | Max Reward: 0.0620
+batch_size=64 | Avg Reward: 0.0129 | Max Reward: 0.0725
+batch_size=128 | Avg Reward: 0.0100 | Max Reward: 0.0612
+
+==================================================
+
+=== lr ===
+lr=0.0001 | Avg Reward: 0.0165 | Max Reward: 0.0620
+lr=0.0005 | Avg Reward: 0.0106 | Max Reward: 0.0575
+lr=0.001 | Avg Reward: 0.0118 | Max Reward: 0.0725
+
+==================================================
+
+=== eps ===
+eps=0.01 | Avg Reward: 0.0108 | Max Reward: 0.0725
+eps=0.05 | Avg Reward: 0.0152 | Max Reward: 0.0612
+eps=0.1 | Avg Reward: 0.0129 | Max Reward: 0.0620
+
+==================================================

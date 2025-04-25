@@ -2,6 +2,7 @@
 '''
 import os
 import argparse
+import random
 
 import rlcard
 from rlcard.agents import (
@@ -12,6 +13,7 @@ from rlcard.utils import (
     get_device,
     set_seed,
     tournament,
+    modifiedTournament,
 )
 import numpy
 
@@ -22,16 +24,9 @@ def load_model(model_path, env=None, position=None, device=None):
         torch.serialization.add_safe_globals([DQNAgent])
         agent = torch.load(model_path, map_location=device, weights_only=False)
         agent.set_device(device)
-    # elif os.path.isdir(model_path):  # CFR model
-    #     from rlcard.agents import CFRAgent
-    #     agent = CFRAgent(env, model_path)
-    #     agent.load()
     elif model_path == 'random':  # Random model
         from rlcard.agents import RandomAgent
         agent = RandomAgent(num_actions=env.num_actions)
-    else:  # A model in the model zoo
-        from rlcard import models
-        agent = models.load(model_path).agents[position]
     
     return agent
 
@@ -44,7 +39,7 @@ def evaluate(args):
     set_seed(args.seed)
 
     # Make the environment with seed
-    env = rlcard.make(args.env, config={'seed': args.seed})
+    env = rlcard.make('uno', config={'seed': args.seed})
 
     # Load models
     agents = []
@@ -53,44 +48,58 @@ def evaluate(args):
     env.set_agents(agents)
 
     # Evaluate
-    rewards = tournament(env, args.num_games)
-    for position, reward in enumerate(rewards):
+    # rewards = tournament(env, args.num_games)
+    # for position, reward in enumerate(rewards):
+    #     print(position, args.models[position], reward)
+
+    avgRewards, allRewards = modifiedTournament(env, args.num_games)
+    for position, reward in enumerate(avgRewards):
         print(position, args.models[position], reward)
+
+    wins0 = allRewards[0].count(1)
+    wins1 = allRewards[1].count(1)
+    print(wins0)
+    print(wins1)
+
+    winRate0 = wins0/args.num_games
+    winRate1 = wins1/args.num_games
+
+    print(winRate0)
+    print(winRate1)
+
+    #each run to their own txt file
+    model_names = f"{os.path.basename(args.models[0])}_vs_{os.path.basename(args.models[1])}".replace(" ", "_").replace(".", "_")
+    log_filename = f"evaluation_5_{model_names}.txt"
+
+    with open(log_filename, "w") as f:
+        f.write(f"Number of Games: {args.num_games}\n")
+        f.write(f"Models: {args.models}\n")
+        for position, reward in enumerate(avgRewards):
+            f.write(f"Player {position} ({args.models[position]}): Avg Reward = {reward}\n")
+        f.write(f"Wins - Player 0: {wins0}, Player 1: {wins1}\n")
+        f.write(f"Win Rate - Player 0: {winRate0}, Player 1: {winRate1}\n")
+        f.write("="*40 + "\n")
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser("Evaluation example in RLCard")
     parser.add_argument(
-        '--env',
-        type=str,
-        default='uno',
-        choices=[
-            'blackjack',
-            'leduc-holdem',
-            'limit-holdem',
-            'doudizhu',
-            'mahjong',
-            'no-limit-holdem',
-            'uno',
-            'gin-rummy',
-        ],
-    )
-    parser.add_argument(
         '--models',
         nargs='*',
         default=[
-            'model (2).pth',
+            'random',
             'random',
         ],
     )
     parser.add_argument(
         '--cuda',
         type=str,
-        default='',
+        default='0',
     )
     parser.add_argument(
         '--seed',
         type=int,
-        default=42,
+        default=random.seed(None),
     )
     parser.add_argument(
         '--num_games',

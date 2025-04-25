@@ -48,7 +48,6 @@ ExportedObj/
 *.VC.db
 *.tar
 *.zip
-*.pth
 *.pyc
 *.meta
 

@@ -1,0 +1,7 @@
+Number of Games: 10000
+Models: ['random', 'random']
+Player 0 (random): Avg Reward = 0.0082
+Player 1 (random): Avg Reward = -0.0082
+Wins - Player 0: 5041, Player 1: 4959
+Win Rate - Player 0: 0.5041, Player 1: 0.4959
+========================================
